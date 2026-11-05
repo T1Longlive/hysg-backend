@@ -294,7 +294,13 @@ def _roll_pool(lid):
                 else:
                     row = growth.find_hero_row(t)
                     if row:
-                        kind = "hero_random" if _is_placeholder_hero(row) else "hero"
+                        if _is_placeholder_hero(row):
+                            kind = "hero_random"
+                        elif _is_low_star_form_of_six(row):
+                            # 6 星武将的 1~3 星形态不在关卡奖励里出现（2026-11-05）
+                            continue
+                        else:
+                            kind = "hero"
             except Exception:
                 kind = None
         if kind:
@@ -331,6 +337,41 @@ def _is_placeholder_hero(row):
         return False
 
 
+def _chain_final_quality(row):
+    """跟 maxStarType 找进阶链尾的星级；找不到就返回自身 Quality。"""
+    tail = _int(row.get("maxStarType"))
+    if tail:
+        try:
+            tail_row = growth.find_hero_row(tail)
+        except Exception:
+            tail_row = None
+        if tail_row:
+            return _int(tail_row.get("Quality"))
+    return _int(row.get("Quality"))
+
+
+def _low_star_form_of(row, min_final):
+    """1~3 星、但整条进阶链最高 >= min_final 的低星形态。"""
+    return _int(row.get("Quality")) <= 3 and _chain_final_quality(row) >= min_final
+
+
+def _is_low_star_form_of_six(row):
+    """满星 6 星的武将不存在 1~3 星形态 —— 这类低星行不能作为关卡奖励。
+
+    2026-11-05 用户口径：6 星武将最低以 4 星形态发放/获得。
+    """
+    return _low_star_form_of(row, 6)
+
+
+def _is_non_mob_low_star(row):
+    """非杂兵的低星形态（进阶链最高 >=4 星）。
+
+    2026-11-05 用户口径：关卡奖励里 1~3 星的随机武将只允许「杂兵」
+    （整条进阶链最高就是 3 星）；4 星及以上才允许出现高星武将。
+    """
+    return _low_star_form_of(row, 4)
+
+
 _HERO_POOL_CACHE = {}
 
 
@@ -342,7 +383,7 @@ def _real_heroes(q_lo, q_hi):
     out = []
     for t, row in (game_config.load_hero_config() or {}).items():
         try:
-            if _is_placeholder_hero(row):
+            if _is_placeholder_hero(row) or _is_non_mob_low_star(row):
                 continue
             q = int(str(row.get("Quality") or 0).strip('"') or 0)
         except (TypeError, ValueError):
