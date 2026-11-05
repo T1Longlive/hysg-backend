@@ -1,0 +1,17 @@
+# Docker 构建上下文瘦身：只放后端代码 + 迁移存档源
+.git
+.workbuddy
+build
+config_data
+config_src
+docs
+legacy_json
+tools
+server/data
+server/logs
+server/venv
+server/.idea
+**/__pycache__
+**/*.pyc
+env/*
+!env/player_data.json

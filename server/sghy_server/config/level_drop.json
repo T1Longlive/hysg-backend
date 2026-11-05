@@ -1,0 +1,27 @@
+{
+  "_comment": "关卡掉落（2026-10-29）。候选池取自 LevelConfig.ShowAward 的 type 列表。每轮必得 1 件（优先道具/装备；整关只有武将时解析「随机武将」为真实武将），再按 rates 概率多掉 1 件。bucket: normal=普通小关 / hard=困难精英 / boss=章末或 IsBoss=1。改完立即生效（mtime 缓存）。",
+  "enabled": true,
+  "rates": {
+    "normal": 0.18,
+    "hard": 0.32,
+    "boss": 0.5
+  },
+  "hero_weight": 0.15,
+  "hero_random_quality": {
+    "normal": [1, 2],
+    "hard": [1, 3],
+    "boss": [1, 4]
+  },
+  "sweep_daily_limit": 0,
+  "item_count": {
+    "normal": [1, 2],
+    "hard": [1, 3],
+    "boss": [2, 4]
+  },
+  "_notes": [
+    "hero_weight: 武将在候选池里的相对抽中权重（1.0 为道具/装备基准），压低避免刷武将",
+    "sweep_daily_limit: 0=跟随 LevelConfig.MaxTimes（普通关1/困难关10/0=不可扫荡）；填正整数=所有可扫荡关统一用该值（客户端显示 leftTimes/maxTimes，改这个会与配置列不一致）",
+    "item_count: 命中后道具类掉落数量区间；装备/武将固定 1 件",
+    "扫荡按每次独立判定后合并（10 连扫最多掉 10 轮）"
+  ]
+}

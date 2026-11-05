@@ -1,0 +1,18 @@
+[project]
+name = "sghy-server"
+version = "0.1.0"
+description = "三国的后裔（youguTV）复用项目专用游戏后端（Python 3.13 + asyncio）"
+requires-python = ">=3.13"
+dependencies = [
+    "protobuf>=6",
+    "aiohttp>=3.9",
+    "aiosqlite>=0.20",
+    "SQLAlchemy[asyncio]>=2.0",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["sghy_server*"]

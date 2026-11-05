@@ -1,0 +1,110 @@
+name: build-and-deploy
+
+# 推送后端代码到 main → 构建镜像 → 推送阿里云 ACR → SSH 到服务器拉取并重建容器
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'server/**'
+      - 'env/player_data.json'
+      - 'docker-compose.yml'
+      - '.dockerignore'
+      - 'scripts/**'
+      - '.github/workflows/**'
+  workflow_dispatch:
+
+env:
+  ACR_HOST: crpi-jzqyelh9p5zb0dmu.cn-chengdu.personal.cr.aliyuncs.com
+  ACR_NAMESPACE: t1longlive
+  IMAGE_NAME: hysg-server
+
+jobs:
+  build:
+    name: 构建并推送镜像
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 体检：Secrets 是否就位
+        env:
+          ACR_USERNAME: ${{ secrets.ACR_USERNAME }}
+          ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}
+        run: |
+          set -euo pipefail
+          missing=0
+          for pair in "ACR_USERNAME:$ACR_USERNAME" "ACR_PASSWORD:$ACR_PASSWORD"; do
+            if [ -z "${pair#*:}" ]; then
+              echo "MISSING: ${pair%%:*} —— 去 Settings → Secrets and variables → Actions 添加"
+              missing=1
+            else
+              echo "OK: ${pair%%:*}"
+            fi
+          done
+          [ "$missing" -eq 0 ] || exit 1
+
+      - name: 登录阿里云 ACR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.ACR_HOST }}
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
+
+      - name: 构建镜像
+        run: |
+          set -euo pipefail
+          docker build -f ./server/Dockerfile -t $ACR_HOST/$ACR_NAMESPACE/$IMAGE_NAME:${{ github.sha }} .
+
+      - name: 推送镜像
+        run: |
+          set -euo pipefail
+          TAG=$ACR_HOST/$ACR_NAMESPACE/$IMAGE_NAME:${{ github.sha }}
+          docker tag "$TAG" $ACR_HOST/$ACR_NAMESPACE/$IMAGE_NAME:latest
+          docker push "$TAG"
+          docker push $ACR_HOST/$ACR_NAMESPACE/$IMAGE_NAME:latest
+          echo "image: $TAG"
+
+  deploy:
+    name: 部署到服务器
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: 体检：部署用 Secrets 是否就位
+        env:
+          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          set -euo pipefail
+          missing=0
+          for pair in "SERVER_HOST:$SERVER_HOST" "SERVER_USER:$SERVER_USER" "SSH_PRIVATE_KEY:$SSH_PRIVATE_KEY"; do
+            if [ -z "${pair#*:}" ]; then
+              echo "MISSING: ${pair%%:*} —— 去 Settings → Secrets and variables → Actions 添加"
+              missing=1
+            else
+              echo "OK: ${pair%%:*}"
+            fi
+          done
+          [ "$missing" -eq 0 ] || exit 1
+
+      - name: SSH 部署
+        uses: appleboy/ssh-action@v1
+        env:
+          ACR_USERNAME: ${{ secrets.ACR_USERNAME }}
+          ACR_PASSWORD: ${{ secrets.ACR_PASSWORD }}
+          IMAGE_TAG: ${{ github.sha }}
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script_stop: true
+          envs: ACR_USERNAME,ACR_PASSWORD,IMAGE_TAG
+          script: |
+            set -euo pipefail
+            cd /opt/HYSG
+            export IMAGE_TAG
+            echo "$ACR_PASSWORD" | docker login crpi-jzqyelh9p5zb0dmu.cn-chengdu.personal.cr.aliyuncs.com -u "$ACR_USERNAME" --password-stdin
+            /bin/bash scripts/deploy.sh

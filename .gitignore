@@ -1,0 +1,15 @@
+# 构建产物 / 缓存
+__pycache__/
+*.pyc
+*.pyo
+
+# 运行时状态（不进库）
+.env
+server/data/
+server/logs/
+server/.pydeps/
+server/.tmp_*/
+server/tools/_tmp/
+
+# 本地构建
+build/

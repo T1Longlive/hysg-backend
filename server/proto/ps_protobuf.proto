@@ -1,0 +1,2557 @@
+// file: protoBuf.proto
+package PS.ProtoBuf;
+
+enum AdditionType {
+  Attack = 1;
+  Defence = 2;
+  Speed = 3;
+  Combo = 4;
+  Block = 5;
+  Counter = 6;
+  CritRate = 7;
+  CritDamage = 8;
+  Hp = 9;
+  CureIncrease = 10;
+  CureDecrease = 11;
+  DamageIncrease = 12;
+  DamageDecrease = 13;
+  AOEDamageIncrease = 14;
+  AOEDamageDecrease = 15;
+  SkillDamageIncrease = 16;
+  SkillDamageDecrease = 17;
+  Tenacity = 20;
+  Miss = 21;
+  Hit = 22;
+}
+enum ValueMode {
+  Number = 0;
+  Percent = 1;
+}
+enum ArenaEvent {
+  None = 0;
+  Event1 = 1;
+  Event2 = 2;
+  Event3 = 3;
+}
+enum CompeteEntranceType {
+  ConquerCityActivity = 1;
+  CrossRealmWar = 2;
+}
+enum ActionTargetCategory {
+  Unknown = 1;
+  Object = 2;
+  Player = 3;
+  Scene = 4;
+}
+enum RankType {
+  PowerRank = 1;
+  LevelRank = 2;
+  StarRank = 3;
+  ArenaRank = 4;
+  BossFightOnce = 5;
+  BossFightTotal = 6;
+  TowerFight = 7;
+  ActivityRechargeRank = 101;
+  ActivityConsumeRank = 102;
+  LimitedLotteryRank = 103;
+  CrossPowerRank = 1001;
+  CrossLevelRank = 1002;
+}
+enum RankCategory {
+  Realtime = 1;
+  Periodic = 2;
+  Activity = 3;
+  Resident = 4;
+}
+enum FlagEffectType {
+  GetExtraRewards = 1;
+  AddModeAddition = 2;
+  WinAddRewardsByBase = 3;
+  FlagDrawAddPer = 4;
+  FlagDrawAddBagCount = 5;
+  AddOriginAddition = 6;
+  FlagDrawReduceCost = 7;
+}
+enum EffectBattleType {
+  NormolLevel = 1;
+  BeastLevel = 2;
+  CoinLevel = 3;
+  ActivityLevel = 4;
+  ConquerCity = 5;
+  Arena = 6;
+  GoodsLevel = 7;
+  CrossRealmWarBattle = 8;
+  BossFight = 9;
+  TowerFightBattle = 10;
+}
+enum FlagDrawEvent {
+  Null = 0;
+  DrawReward = 1;
+}
+enum BattleGameplayCategory {
+  levelTeam = 0;
+  arenaAttackerTeam = 1;
+  arenaDefenderTeam = 2;
+  crossServerTeam = 3;
+  dimensionTeam = 4;
+  scrimmageTeam = 5;
+  conquerCityTeam = 6;
+  flagDrawTeam = 7;
+  bossFightTeam = 8;
+  towerFightTeam = 9;
+}
+enum PlayModeCategory {
+  level = 0;
+  arenaAttacker = 1;
+  arenaDefender = 2;
+  crossServer = 3;
+  dimension = 4;
+  scrimmage = 5;
+  conquerCity = 6;
+  flagDraw = 7;
+  bossFight = 8;
+  towerFight = 9;
+}
+enum PassWordBlockType {
+  GradeHeroType = 0;
+  AwakenHeroType = 1;
+  DecomposeHeroType = 3;
+  FastenFateType = 4;
+  SyntheticHeroType = 5;
+  SyntheticEquipType = 9;
+  ResolveEquipType = 10;
+  GradeEquipType = 11;
+  ReformAssistantEquipType = 13;
+  CostDiamond = 14;
+  CostDiamond100 = 16;
+  AllFlag = 17;
+  ActivityShop = 18;
+}
+enum BattleResult {
+  draw = 0;
+  attacker = 1;
+  defender = 2;
+}
+enum SupplyLineCutoffActivityPhase {
+  SUPPLY_LINE_CUTOFF_ACTIVITY_PHASE_None = 0;
+  SUPPLY_LINE_CUTOFF_ACTIVITY_PHASE_Registering = 1;
+  SUPPLY_LINE_CUTOFF_ACTIVITY_PHASE_Preparing = 2;
+  SUPPLY_LINE_CUTOFF_ACTIVITY_PHASE_Matchmaking = 3;
+  SUPPLY_LINE_CUTOFF_ACTIVITY_PHASE_Battling = 4;
+  SUPPLY_LINE_CUTOFF_ACTIVITY_PHASE_Ended = 5;
+}
+enum SupplyLineCutoffActivityPlayerStatus {
+  SUPPLY_LINE_CUTOFF_ACTIVITY_PLAYER_STATUS_None = 0;
+  SUPPLY_LINE_CUTOFF_ACTIVITY_PLAYER_STATUS_Registered = 1;
+  SUPPLY_LINE_CUTOFF_ACTIVITY_PLAYER_STATUS_Matching = 2;
+  SUPPLY_LINE_CUTOFF_ACTIVITY_PLAYER_STATUS_Battling = 3;
+  SUPPLY_LINE_CUTOFF_ACTIVITY_PLAYER_STATUS_Ended = 4;
+}
+message GameError {
+  enum GameErrorCode {
+    LoginFailed = -4;
+    AnotherUserLogin = -3;
+    ServerBusy = -2;
+    ForbidLogin = -1;
+    E_ID = 1;
+    E_Type = 2;
+    E_CE = 3;
+    E_NE = 4;
+    E_SF = 5;
+    E_LD = 6;
+    E_CNC = 7;
+    E_AN = 8;
+    E_P = 9;
+    E_Un = 10;
+    InvalidAction = 11;
+    LackResource = 12;
+    ArenaRank = 13;
+    TargetNotInArena = 14;
+    NotShow = 15;
+    InvalidOperation = 16;
+  }
+  required int32 errorCode = 1;
+  optional string msg = 2;
+}
+message LoginCharacterData {
+  required int64 id = 1;
+  optional string name = 2;
+  optional int32 lv = 3;
+  optional int32 HeadBorder = 4;
+  optional int32 Gender = 5;
+  optional int64 BirthServer = 6;
+  optional int32 power = 7;
+  optional HeadType HeadType = 8;
+}
+message LoginOK {
+  repeated LoginCharacterData characters = 1;
+}
+message BaseConfigData {
+  optional int32 maxFriendCount = 1;
+}
+message GameConfigData {
+  optional bool isGameImmersionEnabled = 1;
+  optional BaseConfigData baseConfig = 2;
+}
+message EnterGame {
+  required CharacterData character = 1;
+  repeated HeroData heros = 2;
+  repeated MailData mails = 3;
+  repeated ItemData items = 4;
+  repeated EquipData equips = 5;
+  repeated FormationData formations = 6;
+  repeated MissionData missions = 7;
+  repeated LotteryRecordData lotteryRecords = 8;
+  repeated LevelRecordData levelRecords = 9;
+  repeated SceneRecordData sceneRecords = 10;
+  repeated HeroRecordData heroRecords = 11;
+  optional int64 systemTime = 12;
+  optional ShipData shipData = 13;
+  repeated Friend friendData = 14;
+  optional ShenqingInfo shenqingData = 15;
+  optional JiLiInfo jiLiData = 16;
+  repeated ChatMessageData recentMessages = 17;
+  optional int64 randomshopCloseDate = 18;
+  optional bool IsRandomShopPermanent = 19;
+  repeated BuyPropRecordData buyPropRecordDatas = 20;
+  optional int32 guideIndex = 21;
+  optional int32 serverBirthDays = 22;
+  repeated int64 completedMission = 23;
+  optional TodoSysytem todo = 24;
+  optional ActivityData activityData = 25;
+  repeated int64 arenaHeros = 26;
+  optional bool IsVisitor = 27;
+  optional FateFastenInfo FateInfo = 28;
+  optional int32 ActivityTherionTimes = 29 [default = -1];
+  optional int32 ActivityCoinLevelTimes = 30 [default = -1];
+  repeated WarActivityStatues WarStatues = 31;
+  optional int32 DailyPayActivityAward = 32 [default = -1];
+  optional int32 VoteSystem = 33 [default = -1];
+  optional GameConfigData gameConfig = 34;
+  repeated WarBookData warBooks = 35;
+  optional WarBookRecordData warBookRecordData = 36;
+  repeated BattleGameplayData battleGameplays = 37;
+  repeated BattlePlayModeData battlePlayModeDatas = 38;
+  repeated HonorData honors = 39;
+  repeated FlagData flags = 40;
+  repeated FlagPartData flagParts = 41;
+  repeated PassCheckData passChecks = 44;
+  repeated int64 arenaFlagParts = 42;
+  optional int32 ActivityGoodsLevelTimes = 43 [default = -1];
+  repeated EquipRecordData equipRecords = 45;
+  repeated CollectionAwardRecordData collectionAwardRecords = 46;
+}
+message SystemTime {
+  required int64 time = 1;
+}
+message ModuleEventLogRequest {
+  required int32 moduleID = 1;
+  required string eventName = 2;
+  optional string eventResult = 3;
+  optional string failReason = 4;
+  optional int64 businessID = 5;
+  optional string businessName = 6;
+  optional int64 itemID = 7;
+  optional string itemName = 8;
+  optional string tabName = 9;
+  optional int32 stepNo = 10;
+  optional int32 roundNo = 11;
+  optional bool isFree = 12;
+  optional string clientEventID = 13;
+  optional string extraJson = 14;
+  optional int64 clientEventTime = 15;
+  optional int32 userType = 16;
+  optional string operationMode = 17;
+}
+message CreateCharacter {
+  required string nickName = 1;
+  required int32 gender = 2;
+  optional int32 type = 3;
+}
+message QueryRecordMessage {
+  required string name = 1;
+  required int32 index = 2;
+  required int32 count = 3;
+}
+message QueryRecordData {
+  repeated QueryRecordItem items = 1;
+}
+message QueryRecordItem {
+  optional string name = 1;
+  optional int32 count = 2;
+}
+message StringMessage {
+  required string msg = 1;
+}
+message CreateCharacterOK {
+  required int64 id = 1;
+  required string name = 2;
+  required int32 gender = 3;
+  required int64 type = 4;
+  required int32 lv = 5;
+  required int32 teamExp = 6;
+}
+message ActivityShopMessage {
+  required int64 id = 1;
+  repeated ActivityShopChoose activityShopChoose = 2;
+}
+message ActivityShopChoose {
+  required int32 type = 1;
+  repeated int64 idList = 2;
+}
+message IDMessage {
+  required int64 id = 1;
+}
+message IDInt32Message {
+  required int64 id = 1;
+  optional int32 value = 2;
+}
+message IDListMessage {
+  repeated int64 id = 1;
+}
+message MainIDListMessage {
+  required int64 type = 1;
+  repeated int64 ids = 2;
+}
+message IDCountMessage {
+  required int64 id = 1;
+  optional int32 count = 2;
+}
+message PersonalShopRequest {
+  required int32 shopGroup = 1;
+}
+message PersonalShopBuyRequest {
+  required int32 shopGroup = 1;
+  required int64 shopItemId = 2;
+}
+message ReceivePassCheckMissionReward {
+  required int64 missionConfigId = 1;
+  required int32 passCheckType = 2;
+}
+message BuyPassCheckLv {
+  required int32 passCheckType = 1;
+  required int32 buyLv = 2;
+}
+message ChoosePassCheckTempGroup {
+  required int32 passCheckType = 1;
+  required int32 group = 2;
+}
+message QuickReceivePassCheckReward {
+  required int32 passCheckType = 1;
+}
+message RemovePassCheckNewTip {
+  required int32 passCheckType = 1;
+}
+message IndexSpanMessage {
+  required int32 index = 1;
+  required int32 count = 2;
+}
+message ShowBattle {
+  required string key = 1;
+}
+message PropActionMessage {
+  required int64 id = 1;
+  required int64 targetID = 2;
+}
+message ShowMessage {
+  required int32 code = 1;
+  optional string msg = 2;
+}
+message UpdateCharacter {
+  required CharacterData character = 1;
+}
+message CharacterData {
+  required int64 id = 1;
+  optional string name = 2;
+  optional int32 gender = 3 [default = -1];
+  optional int64 type = 4 [default = -1];
+  optional int32 lv = 5 [default = -1];
+  optional int64 teamExp = 6 [default = -1];
+  optional int32 dollar = 7 [default = -1];
+  optional int64 coin = 8 [default = -1];
+  optional int32 adminType = 9 [default = -1];
+  optional int32 vipLv = 10 [default = -1];
+  optional int32 signTimes = 11 [default = -1];
+  optional int32 missSignTimes = 12 [default = -1];
+  optional int32 todaySignTimes = 13 [default = -1];
+  optional int64 selectedFormation = 14 [default = -1];
+  optional int32 arenaMedal = 15 [default = -1];
+  optional int32 Vigour = 16 [default = -1];
+  optional int32 HeroCoin = 17 [default = -1];
+  optional int32 ep = 18 [default = -1];
+  optional int32 prestige = 19 [default = -1];
+  optional int64 shipSceneType = 20 [default = -1];
+  optional int32 bugSignTimes = 21 [default = -1];
+  optional int32 signId = 22 [default = -1];
+  optional int32 todayChatTimes = 23;
+  optional int64 nextChatTime = 24;
+  optional int32 payDollar = 25 [default = -1];
+  optional int32 payTimes = 26 [default = -1];
+  optional ActionTimeData actionTime = 27;
+  optional PersonalShopData arenaShop = 28;
+  optional PersonalShopData bossShop = 65;
+  optional int32 maxEp = 29 [default = -1];
+  optional int64 nextGetEpTime = 30 [default = -1];
+  optional int32 payMoney = 31 [default = -1];
+  optional int32 pvePower = 32 [default = -1];
+  optional int32 pvpPower = 33 [default = -1];
+  optional HeadType characterHead = 34;
+  optional int32 changeNameCard = 35 [default = -1];
+  optional int32 payMoneyOfDay = 40 [default = -1];
+  optional int32 payMoneyOfMonth = 41 [default = -1];
+  optional int32 summonTimes = 42 [default = -1];
+  repeated CallHeroRecord callHeroRecord = 43;
+  optional bool skipGuideHandler = 44;
+  optional int64 flagCoin = 45 [default = -1];
+  repeated CountRecord flagPartSpecialSyntheticRecords = 46;
+  optional int64 exchangeCoin = 47 [default = -1];
+  repeated int64 guideRewardRecords = 48;
+  optional int32 openSecondPassWord = 49 [default = -1];
+  optional int64 secondPassWordLimitTime = 50 [default = -1];
+  repeated int64 passWordBlocks = 51;
+  optional int32 needCheckSecondPassWord = 52 [default = -1];
+  optional int32 secondPassWordErrorCount = 53 [default = -1];
+  optional int32 callHeroRecordIndex = 54 [default = -1];
+  optional int32 flagPartSpecialSyntheticRecordsIndex = 55 [default = -1];
+  optional int32 passWordBlocksIndex = 56 [default = -1];
+  optional int32 returnPlayer = 57 [default = -1];
+  optional int64 returnPlayerLastTime = 58 [default = -1];
+  optional int64 applyCloseSecondPassWordLimitTime = 59 [default = -1];
+  optional int64 bossCoin = 60 [default = -1];
+  optional int32 bossEp = 61 [default = -1];
+  optional int64 birthday = 62 [default = -1];
+  optional int64 birthdayLastModifyTime = 63 [default = -1];
+  optional int32 birthdayLastReceiveYear = 64 [default = -1];
+  optional int32 todayBossFightPracticeTimes = 66 [default = -1];
+  optional int64 towerFightCoin = 67 [default = -1];
+  optional PersonalShopData towerFightShop = 68;
+}
+message CharacterShowData {
+  required int64 id = 1;
+  optional string name = 2;
+  optional int64 type = 3;
+  optional int32 lv = 4;
+  optional int32 rank = 5;
+  optional int32 power = 6;
+  repeated int64 heros = 7;
+  optional int64 lastLoginTime = 8;
+  optional HeadType headType = 9;
+}
+message ActionTimeData {
+  optional int32 buyCoinTimes = 1 [default = -1];
+  optional int32 buyEpTimes = 2 [default = -1];
+  optional int32 leftTherionTimes = 3 [default = -1];
+  optional int32 buyTherionTimes = 4 [default = -1];
+  optional int32 qieCuoTimes = 5 [default = -1];
+  optional int32 todayVigour = 6 [default = -1];
+  optional int32 jiLiVigour = 7 [default = -1];
+  optional int32 FreeBuyCoinTimes = 8 [default = -1];
+  optional int32 FreeBuyEpTimes = 9 [default = -1];
+}
+message ChatMessageData {
+  optional int64 characterType = 1;
+  optional int32 lv = 2;
+  optional string name = 3;
+  optional int32 rank = 4;
+  optional int32 power = 5;
+  repeated int64 heroType = 6;
+  optional int64 sendTime = 7;
+  optional string content = 8;
+  optional int64 characterID = 9;
+  optional int32 vipLv = 10;
+}
+message PersonalShopData {
+  optional int64 nextDate = 1;
+  optional int32 buyRefreshTimes = 2;
+  repeated PersonalShopRecordData records = 3;
+  optional int32 shopGroup = 4;
+}
+message PersonalShopRecordData {
+  optional int64 type = 2;
+  optional int32 leftTimes = 3;
+  optional int32 minVIP = 4;
+  optional int32 maxVIP = 5;
+}
+message RandomShopData {
+  optional int64 nextDate = 1;
+  optional int32 buyRefreshTimes = 2;
+  repeated PersonalShopRecordData records = 3;
+  optional int64 endDate = 4;
+  optional bool isPermanent = 5;
+}
+message ShowRandomShop {
+  optional int64 closeDate = 1;
+}
+message MailData {
+  enum MailStatus {
+    NEW = 0;
+    READ = 1;
+    ARCHIVED = 2;
+  }
+  enum MailType {
+    Notice = 0;
+    Award = 1;
+    Card1 = 2;
+    Card2 = 3;
+  }
+  required int64 id = 1;
+  optional int64 senderId = 2;
+  optional string senderName = 3;
+  optional MailStatus status = 4;
+  optional MailType type = 5;
+  optional int64 sendTime = 6;
+  repeated AwardSpecData award = 7;
+  optional string title = 8;
+  optional string content = 9;
+}
+message MailList {
+  repeated MailData datas = 1;
+}
+message AwardSpecData {
+  required int64 type = 1;
+  required string name = 2;
+  optional int32 value = 3;
+  optional int64 param = 4;
+  optional bool extra = 5;
+}
+message AwardResult {
+  required string type = 1;
+  repeated AwardSpecData datas = 2;
+}
+message HeroData {
+  required int64 id = 1;
+  optional int64 type = 2 [default = -1];
+  optional int32 maxHP = 3 [default = -1];
+  optional int32 attack = 4 [default = -1];
+  optional int32 defence = 5 [default = -1];
+  optional int32 speed = 6 [default = -1];
+  optional int32 comboRate = 7 [default = -1];
+  optional int32 blockRate = 8 [default = -1];
+  optional int32 counterRate = 9 [default = -1];
+  optional int32 critRate = 10 [default = -1];
+  optional int32 critDamage = 11 [default = -1];
+  optional int32 position = 12 [default = -1];
+  optional int32 grade = 13 [default = -1];
+  optional int32 gradeExp = 14 [default = -1];
+  optional int32 lv = 15 [default = -1];
+  optional int32 maxLv = 16 [default = -1];
+  optional int32 exp = 17 [default = -1];
+  optional int32 Count = 18 [default = -1];
+  optional int32 awakenLv = 19 [default = -1];
+  optional int32 power = 20 [default = -1];
+  optional string name = 21;
+  optional int32 damageIncrease = 22;
+  optional int32 damageDecrease = 23;
+  optional int32 cureIncrease = 24;
+  optional int32 cureDecrease = 25;
+  optional int32 AOEIncrease = 26;
+  optional int32 AOEDecrease = 27;
+  optional int32 skillDamageIncrease = 28;
+  optional int32 skillDamageDecrease = 29;
+  optional int32 awakenTimes = 30;
+  optional int32 isGoldenHero = 31 [default = -1];
+  optional int32 tenacity = 32;
+  optional int32 miss = 33;
+  optional int32 hit = 34;
+  optional int32 effectResist = 35;
+  optional int32 effectHit = 36;
+  optional bool IsDevil = 37;
+  optional int32 skillA = 38;
+  optional int32 skillB = 39;
+  optional int32 skillC = 40;
+  optional int32 skillD = 41;
+  optional int32 recordDamage = 42;
+  optional int32 recordHealing = 43;
+  optional int32 recordDamageTaken = 44;
+  optional int32 recordUseSkillCount = 45;
+  optional int32 recordActionCount = 46;
+  optional int32 recordApplyBuff = 47;
+  optional int32 recordDamageBlock = 48;
+  optional int32 recordStopActionCount = 49;
+}
+message HeroDatas {
+  repeated HeroData datas = 1;
+}
+message AllHeroMessageItem {
+  required int32 key = 1;
+  required HeroData heroData = 2;
+}
+message AllHeroMessage {
+  repeated AllHeroMessageItem list = 1;
+}
+message AutoEquipHero {
+  repeated HeroData unequipedHero = 1;
+  repeated HeroData equipedHero = 2;
+}
+message SynthHeroInfo {
+  optional HeroData datas = 1;
+  optional int32 SyntheticTimes = 2;
+  optional int32 Cost = 3;
+}
+message RebuildHeroInfo {
+  optional HeroData datas = 1;
+  optional int32 Num = 2;
+}
+message HeroRecordData {
+  required int64 id = 1;
+  optional int64 type = 2;
+}
+message EquipRecordData {
+  required int64 id = 1;
+  optional int64 type = 2;
+}
+message CollectionAwardRecordData {
+  required int32 type = 1;
+  required int32 subType = 2;
+  repeated int32 receivedMilestoneCounts = 3;
+}
+message ReceiveCollectionAwardRequestData {
+  required int32 type = 1;
+  required int32 subType = 2;
+  required int32 milestoneCount = 3;
+}
+message HeroStageData {
+  required int64 id = 1;
+  optional int64 type = 2;
+  optional int64 occupantID = 3;
+  optional string occupantName = 4;
+  optional int32 occupantPower = 5;
+  optional int32 occupySeconds = 6;
+  optional int32 CDSeconds = 7;
+  optional int32 winTimes = 8;
+  optional int32 attackerCount = 9;
+  optional int32 status = 10;
+}
+message HeroStageMessage {
+  repeated HeroStageData datas = 1;
+  optional int32 leftTimes = 2;
+}
+message AttackHeroStageBegin {
+  required int64 id = 1;
+  required int64 formation = 2;
+  repeated HeroData heros = 3;
+}
+message AttackHeroStageResult {
+  required int64 id = 1;
+  optional BattleRecordData battleRecord = 2;
+  optional int32 result = 3;
+}
+message WinHeroStage {
+  required int64 id = 1;
+}
+message FailHeroStage {
+  required int64 id = 1;
+}
+message ItemData {
+  required int64 id = 1;
+  optional int64 type = 2 [default = -1];
+  optional int32 count = 3 [default = -1];
+}
+message ItemDatas {
+  repeated ItemData datas = 1;
+}
+message HonorData {
+  required int64 id = 1;
+  optional int64 type = 2 [default = -1];
+  optional int32 count = 3 [default = -1];
+  optional bool canUse = 4;
+  optional bool newTip = 5;
+}
+message HonorDatas {
+  repeated HonorData datas = 1;
+}
+message FlagPartData {
+  required int64 id = 1;
+  optional int64 type = 2 [default = -1];
+  optional int64 host = 3 [default = -1];
+  repeated FlagPartAdditionData unlockAssistants = 4;
+  optional int32 unlockCount = 5;
+  optional int32 upCount = 6;
+}
+message FlagPartAdditionData {
+  required AdditionType type = 1;
+  optional int32 value = 2;
+  optional ValueMode mode = 3;
+  optional int32 Index = 4;
+  optional int32 maxValue = 5;
+  optional bool unlock = 6;
+  optional int32 baseValue = 7;
+}
+message FlagPartDatas {
+  repeated FlagPartData datas = 1;
+}
+message PassCheckData {
+  required int64 id = 1;
+  optional int32 passType = 2 [default = -1];
+  optional int64 creationTime = 3 [default = -1];
+  optional int64 endTime = 4 [default = -1];
+  optional int32 lv = 5 [default = -1];
+  optional int32 exp = 6 [default = -1];
+  optional int32 lastGetLv = 7 [default = -1];
+  optional int32 tempGroup = 8 [default = -1];
+  optional int32 group = 9 [default = -1];
+  optional int32 payState = 10 [default = -1];
+  optional bool isNew = 11 [default = false];
+  optional int32 getLimitExp = 12 [default = -1];
+}
+message FlagData {
+  required int64 id = 1;
+  required int32 index = 2;
+}
+message IDCounteListByIDMessage {
+  required int64 id = 1;
+  repeated IDCountMessage idCount = 2;
+}
+message MultIDCounteListByIDMessage {
+  required int64 id = 1;
+  repeated IDCounteListByIDMessage idCount = 2;
+}
+message FlagDatas {
+  repeated FlagData datas = 1;
+}
+message EquipFlagToBattleGameplayIndexRequest {
+  required int32 category = 1;
+  required int32 index = 2;
+  required int64 id = 3;
+  required PlayModeCategory categoryPlayMode = 4;
+}
+message UnequipFlagFromBattleGameplayIndexRequest {
+  required int32 category = 1;
+  optional int32 index = 2;
+  optional int64 id = 3;
+}
+message EquipData {
+  required int64 id = 1;
+  optional int64 type = 2 [default = -1];
+  optional int64 host = 3 [default = -1];
+  optional int32 StrengthenLv = 4 [default = -1];
+  optional AdditionData assistantAddition = 5;
+  repeated AdditionData finalAdditions = 6;
+  repeated int64 filledMaterials = 7;
+  optional int32 EnCritCount = 8;
+  optional int32 grade = 9;
+  optional int32 gradeExp = 10;
+  repeated AdditionData unlockAssistant = 11;
+  repeated AdditionData lastUnlockAssistant = 12;
+}
+message EquipDatas {
+  repeated EquipData datas = 1;
+}
+message FunctionData {
+  required int64 id = 1;
+  required string name = 2;
+  required int32 count = 3;
+  optional string param = 4;
+}
+message DeleteData {
+  required int32 typeID = 1;
+  required int64 id = 2;
+}
+message DeleteDatas {
+  repeated DeleteData datas = 1;
+}
+message StrengthenEquip {
+  required int64 typeID = 1;
+  optional int32 times = 2;
+}
+message Test {
+  required string msg = 1;
+}
+message JsonCommand {
+  required string msg = 1;
+}
+message CommandResult {
+  required int32 id = 1;
+  required int32 result = 2;
+  optional string tag = 3;
+}
+message FormationData {
+  required int64 id = 1;
+  optional int64 type = 2;
+  optional int32 lv = 3;
+}
+message AdditionData {
+  required AdditionType type = 1;
+  optional int32 value = 2;
+  optional ValueMode mode = 3;
+  optional int32 index = 4;
+  optional int32 times = 5;
+  optional int64 param = 6;
+  optional int64 param2 = 7;
+  optional int64 param3 = 8;
+  optional int64 param4 = 9;
+}
+message QualityAdditionData {
+  required AdditionType type = 1;
+  optional int32 value = 2;
+  optional ValueMode mode = 3;
+  optional int32 quality = 4;
+}
+message MissionData {
+  required int64 id = 1;
+  optional int64 type = 2;
+  optional int32 needValue = 3;
+  optional int32 completeValue = 4;
+  optional int64 acceptDate = 5;
+  optional int32 missionStatus = 6;
+}
+message MultiMissionDatas {
+  repeated MissionData missions = 1;
+}
+message MissionSuccess {
+  required int64 id = 1;
+  required int64 type = 2;
+  required AwardResult result = 3;
+}
+message MultiMissionSuccess {
+  repeated MissionSuccess missions = 1;
+}
+message DayCrossMissionRewardResult {
+  required int32 score = 1;
+  required AwardResult result = 2;
+}
+message DayCrossMissionGroupMissionsData {
+  required int32 day = 1;
+  repeated int64 missions = 2;
+}
+message DayCrossMissionData {
+  optional int32 isStart = 1;
+  optional int32 group = 2;
+  optional int64 startTime = 3;
+  optional int64 endTime = 4;
+  optional int32 score = 5;
+  repeated DayCrossMissionGroupMissionsData groupMissions = 6;
+  repeated int32 dayCrossScoreReceivedReward = 7;
+  repeated int64 dayCrossMissionBoughtShopGifts = 8;
+}
+message DayCrossMissionSimpleData {
+  optional int32 group = 1;
+  optional int32 score = 2;
+  repeated int32 dayCrossScoreReceivedReward = 3;
+  repeated int64 dayCrossMissionBoughtShopGifts = 4;
+}
+message LotteryRecordData {
+  required int64 id = 1;
+  optional int64 type = 2;
+  optional int64 nextFreeTime = 3;
+  optional int32 totalTimes = 4;
+  optional int32 discount = 5;
+  optional int64 discountEndTime = 6;
+  optional int32 discountLeftTimes = 7;
+}
+message LotteryRecordDatas {
+  repeated LotteryRecordData lotteryRecords = 1;
+}
+message UseLotteryData {
+  required int64 id = 1;
+  optional bool useItem = 2;
+}
+message LotteryResult {
+  required int64 id = 1;
+  repeated AwardSpecData datas = 2;
+}
+message LevelRecordData {
+  required int64 id = 1;
+  optional int64 type = 2;
+  optional int32 star = 3;
+  optional int32 leftTimes = 4;
+  optional int32 buyTimes = 5;
+}
+message SceneRecordData {
+  required int64 id = 1;
+  optional int64 type = 2;
+  optional int32 oneStar = 3;
+  optional int32 twoStar = 4;
+  optional int32 threeStar = 5;
+}
+message LevelBattleRecord {
+  required int64 id = 1;
+  optional BattleRecordData battleRecord = 2;
+  optional int32 result = 3;
+  optional int32 star = 4;
+  optional int64 totalDamage = 5;
+  optional int32 useTime = 6;
+  repeated int32 useContiions = 7;
+}
+message BattleRecordData {
+  optional BattleGroupData myGroup = 1;
+  repeated BattleGroupData targetGroups = 2;
+  repeated ActorActionData actionDatas = 3;
+  optional int32 levelType = 4 [default = -1];
+  repeated HeroData supportGroups = 5;
+  optional int32 myDieCout = 6;
+  optional BattleGroupData myGroupRand = 7;
+  optional BattleGroupData myGroupEnd = 8;
+}
+message BattleGroupData {
+  required int64 id = 1;
+  required int64 formation = 2;
+  repeated HeroData heros = 3;
+  optional int64 type = 4;
+  optional string name = 5;
+  optional int32 power = 6;
+  optional int32 lv = 7;
+  optional HeadType head = 8;
+  repeated int64 flagParts = 9;
+  repeated int32 flagPartSkillIds = 10;
+}
+message ActorActionData {
+  enum ActorActionType {
+    Attack = 1;
+    UseSkill = 2;
+    Combo = 3;
+    Counter = 4;
+    ExtraAttack = 5;
+    RoundOver = 100;
+    ActionStart = 101;
+    ActionEnd = 102;
+    RoundStart = 103;
+    BattleStart = 104;
+    BattleEnd = 105;
+    ChangeTargetGroup = 106;
+    ShowDialog = 107;
+    ToPlay = 108;
+  }
+  optional int64 actor = 1;
+  optional ActorActionType type = 2;
+  optional string param = 3;
+  repeated ActorActionResultGroup results = 4;
+  repeated int64 targets = 5;
+  optional int32 time = 6;
+}
+message ActorActionResultData {
+  enum ActorActionResultType {
+    Damage = 1;
+    Cure = 2;
+    ExtraDamage = 3;
+    Dead = 4;
+    Crit = 5;
+    Block = 6;
+    SkillMiss = 7;
+    AddBuff = 8;
+    UpdateBuff = 9;
+    Revive = 10;
+    Purge = 11;
+    IgnoreDamage = 12;
+    IgnoreAction = 13;
+    IgnoreBuffEffect = 14;
+    UpdateBuffIcon = 15;
+    Shield = 16;
+  }
+  optional ActorActionResultType type = 1;
+  optional string param = 2;
+  optional int64 value = 3;
+}
+message ActorActionResultGroup {
+  optional int64 actor = 1;
+  repeated ActorActionResultData effects = 2;
+}
+message LevelBegin {
+  required int64 id = 1;
+  repeated int32 randomValues = 2;
+  repeated BattleGroupData groups = 3;
+  optional HeroGroupData myGroup = 4;
+  optional bool practiceMode = 5;
+}
+message TherionInfo {
+  optional int32 todayLeftTimes = 1;
+  optional int32 todayBuyTimes = 2;
+  optional int32 qinglongTimes = 3;
+  optional int32 baihuTimes = 4;
+  optional int32 zhuqueTimes = 5;
+  optional int32 xuanwuTimes = 6;
+}
+message NewTherionInfo {
+  repeated TherionBaseInfo baseInfo = 1;
+}
+message TherionBaseInfo {
+  enum TherionType {
+    QingLong = 1;
+    BaiHu = 2;
+    ZhuQue = 3;
+    XuanWu = 4;
+    CoinLv = 5;
+    GoodsLv = 6;
+  }
+  enum IsOpen {
+    open = 1;
+    close = 2;
+  }
+  optional IsOpen IsTherionOpen = 1;
+  optional int32 todayLeftTimes = 2;
+  optional TherionType type = 3;
+  repeated int64 levelTypes = 4;
+}
+message LevelResult {
+  required int64 id = 1;
+  optional int32 teamExp = 2;
+  optional int32 coin = 3;
+  optional int32 exp = 4;
+  repeated ExpChange expChanges = 5;
+  repeated AwardSpecData props = 6;
+  optional string battleID = 7;
+  optional ExpChange characterChange = 8;
+  optional int32 ActivityTherionTimes = 9 [default = -1];
+  optional int32 ActivityCoinLevelTimes = 10 [default = -1];
+  optional int32 ActivityGoodsLevelTimes = 11 [default = -1];
+}
+message ConquerCityLevelResult {
+  required int64 id = 1;
+  optional string battleID = 2;
+  repeated ConquerCityMission missions = 3;
+  optional int32 Star = 4;
+}
+message LevelResults {
+  repeated LevelResult results = 1;
+  repeated AwardSpecData extraProps = 2;
+  optional ExpChange characterChange = 3;
+}
+message WorldBossInfo {
+  optional int32 rank = 1;
+  optional int32 maxDamage = 2;
+  optional int32 times = 3;
+  optional int32 buyTimes = 4;
+  optional int32 winnerDamage = 5;
+  repeated AwardSpecData awards = 6;
+  optional int64 endTime = 7;
+  optional int64 bossType = 8;
+}
+message WorldBossRank {
+  optional BossRecordData userRank = 1;
+  repeated BossRecordData rankList = 5;
+}
+message BossRecordData {
+  optional CharacterShowData character = 1;
+  optional int32 damage = 2;
+  optional string battleID = 3;
+  optional int32 bossRank = 4;
+}
+message ChallengeInfo {
+  optional BossBaseInfo worldBoss = 1;
+  optional int32 leftTherionTimes = 2;
+  optional CoinIslandBaseInfo coinIslandInfo = 3;
+}
+message CoinIslandBaseInfo {
+  optional int32 times = 1;
+  optional int32 currentCoin = 2;
+  optional int32 maxCoin = 3;
+}
+message BossBaseInfo {
+  enum IsOpen {
+    open = 1;
+    close = 2;
+  }
+  optional IsOpen IsWorldBossOpen = 1;
+  optional int32 leftTimes = 2;
+}
+message ChallengeBossEndInfo {
+  optional int32 currentDamage = 1;
+  optional int32 todayMaxDamage = 2;
+  optional int32 rank = 3;
+}
+message ExpChange {
+  required int64 id = 1;
+  optional int32 oldExp = 2;
+  optional int32 oldLv = 3;
+  optional int32 newExp = 4;
+  optional int32 newLv = 5;
+  optional int32 addExp = 6;
+}
+message ArenaDataBase {
+  optional int32 rank = 1;
+  optional int32 bestRank = 2;
+  optional int32 leftEventSeconds = 3;
+  optional int32 winTimes = 4;
+  optional int32 leftArenaTimes = 5;
+  optional int32 leftArenaAttackSeconds = 6;
+  optional int32 buyArenaTimes = 7;
+  optional ArenaEvent arenaEvent = 8;
+}
+message ArenaData {
+  required ArenaDataBase baseData = 1;
+  repeated ArenaPlayerData targets = 2;
+  optional HeroGroupData heroGroup = 4;
+  optional string AttackerName = 5;
+}
+message ArenaRecords {
+  repeated ArenaRecordData recordDatas = 1;
+}
+message HeroGroupData {
+  repeated HeroData heros = 1;
+  optional int32 power = 2;
+  repeated int64 flagParts = 3;
+}
+message ArenaPlayerData {
+  required int64 id = 1;
+  optional string name = 2;
+  optional int32 rank = 3;
+  optional int32 lv = 4;
+  optional int32 power = 5;
+  optional int32 winTimes = 6;
+  optional int64 characterType = 7;
+  repeated HeroData heroDatas = 8;
+  optional HeadType characterHead = 9;
+  optional int32 param1 = 10;
+  repeated int64 flagParts = 11;
+}
+message ArenaPlayerDatas {
+  repeated ArenaPlayerData datas = 1;
+}
+message ArenaRecordData {
+  required int64 id = 1;
+  optional int32 result = 2;
+  optional int64 targetID = 3;
+  optional string targetName = 4;
+  optional int32 passedSeconds = 5;
+  optional string recordKey = 6;
+  optional int32 oldRank = 7;
+  optional int32 newRank = 8;
+  optional bool haveExtraAddition = 9;
+  optional int32 targetPower = 10;
+  optional int32 targetLv = 11;
+  repeated int64 targetTypes = 12;
+  optional int32 targetRank = 13;
+  optional int64 targetImage = 14;
+  optional HeadType head = 15;
+}
+message AttackArena {
+  required int64 id = 1;
+  optional int32 result = 2;
+  optional int32 coin = 3;
+  optional int32 prestige = 4;
+  optional BattleRecordData battleRecord = 5;
+  optional int32 rank = 6;
+  optional bool isBestRank = 7;
+  optional ArenaEvent arenaEvent = 8;
+  optional string recordKey = 9;
+  optional int32 hp = 10;
+  optional int32 attack = 11;
+  optional int32 defence = 12;
+  optional int32 addPrestige = 13;
+  optional int32 addFlagPrestige = 14;
+  optional AwardResult flagAwards = 15;
+}
+message ArenaBattleResult {
+  required int64 id = 1;
+  optional BattleRecordData battleRecord = 2;
+  optional int32 result = 3;
+  optional int32 killNum = 4;
+}
+message MapCellData {
+  optional int64 id = 1;
+  optional int64 type = 2;
+  optional int32 status = 3;
+  optional int32 leftUseSeconds = 4;
+  optional int32 posX = 5;
+  optional int32 posY = 6;
+  optional string name = 7;
+}
+message MapCellDetailData {
+  optional int64 id = 1;
+  optional int64 type = 2;
+  optional int32 status = 3;
+  optional int32 leftUseSeconds = 4;
+  optional int32 lv = 5;
+  optional string name = 6;
+  optional int64 levelID = 7;
+  repeated int64 heros = 8;
+  optional int32 progress = 9;
+  optional int32 power = 10;
+  optional int64 ownerType = 11;
+  optional string organizationName = 12;
+}
+message BattleActorData {
+  required int64 id = 1;
+  optional int64 type = 2 [default = -1];
+  optional int32 maxHP = 3 [default = -1];
+  optional int32 attack = 4 [default = -1];
+  optional int32 defence = 5 [default = -1];
+}
+message ShipData {
+  optional int32 food = 1;
+  optional int32 maxFood = 2;
+  optional int32 posX = 4;
+  optional int32 posY = 5;
+  optional int64 sceneType = 6;
+  optional int32 endFishingTime = 7;
+  optional int32 shipView = 8;
+  optional int32 building = 9;
+  optional int32 fishingTimes = 10;
+  optional int32 totalValue = 11;
+}
+message ExploreBattleRecord {
+  required PointData point = 1;
+  optional BattleRecordData battleRecord = 2;
+  optional int32 result = 3;
+  optional int32 totalDamage = 4;
+}
+message ExploreMessage {
+  optional int64 sceneType = 1;
+  optional ShipData shipData = 2;
+  repeated MapCellData datas = 3;
+  repeated PointData knownPoints = 4;
+  repeated SeaMapEntranceRecordData entranceRecordList = 5;
+}
+message SeaMapEntranceRecordData {
+  optional int64 type = 1;
+  optional int32 times = 2;
+}
+message PointData {
+  optional int32 x = 1;
+  optional int32 y = 2;
+}
+message WayData {
+  repeated PointData points = 1;
+}
+message SeaBattleBeginData {
+  required int64 id = 1;
+  optional HeroGroupData myGroup = 2;
+  repeated BattleGroupData groups = 3;
+  optional int64 type = 4;
+  optional int32 func = 5;
+  optional int64 levelID = 6;
+}
+message SeaBattleResultData {
+  optional int32 coin = 1;
+  optional int32 food = 2;
+  repeated AwardSpecData props = 3;
+  repeated int64 itemTypes = 4;
+  optional int32 prestige = 5;
+  optional int32 result = 6;
+  optional int64 type = 7;
+  optional int32 func = 8;
+  optional string BattleID = 9;
+}
+message TradeIslandData {
+  repeated IslandProductData shipProduct = 1;
+  repeated IslandProductData islandProduct = 2;
+}
+message EvalIslandProduct {
+  repeated IslandProductData buyProducts = 1;
+  repeated IslandProductData sellProducts = 2;
+  optional PointData point = 3;
+}
+message EvalIslandProductResult {
+  optional TradeIslandData data = 1;
+  optional int32 coin = 2;
+  optional int32 dollar = 3;
+}
+message IslandProductData {
+  optional int64 type = 1;
+  optional int32 count = 2;
+  optional int32 maxCount = 3;
+  optional int32 price = 4;
+  optional int32 currency = 5;
+}
+message FriendInfo {
+  required int64 friendID = 1;
+  optional string friendName = 2;
+  optional int64 friendType = 3;
+  optional int32 lv = 4;
+  optional int32 rank = 5;
+  optional int32 power = 6;
+  optional int64 time = 7;
+  repeated int64 friendHero = 8;
+  optional int32 vipLv = 9;
+  optional HeadType headType = 10;
+}
+message Friend {
+  optional bool hasJiLi = 1;
+  optional int64 lastTime = 2;
+  optional FriendInfo friendData = 3;
+}
+message ShenqingInfo {
+  optional bool hasNew = 1;
+  repeated FriendInfo shenqingData = 2;
+}
+message JiLiInfo {
+  optional bool hasNew = 1;
+  repeated FriendInfo jiLiData = 2;
+}
+message FriendRequest {
+  enum FriendRequestResult {
+    Success = 1;
+    Notexist = 2;
+    AlreadyRequest = 3;
+    MaxCount = 4;
+    AlreadyFriends = 5;
+    CantSelf = 6;
+  }
+  required FriendRequestResult result = 1;
+}
+message AcceptFriendResponse {
+  enum ResponseTypes {
+    Ok = 0;
+    NotFound = 1;
+    SelfLimitReached = 2;
+    TargetLimitReached = 3;
+  }
+  required int64 id = 1;
+  required ResponseTypes result = 2;
+}
+message SimulationBattleData {
+  optional HeroGroupData heroGroup = 1;
+  optional ArenaPlayerData target = 2;
+}
+message RelationCharacterData {
+  enum RelationFlags {
+    None = 0;
+    Requested = 1;
+    Friend = 2;
+  }
+  optional CharacterShowData data = 1;
+  optional int64 lastOfflineTimestamp = 2;
+  optional int64 level = 3;
+  optional RelationFlags flags = 4;
+  optional int32 vipLv = 5;
+  optional bool online = 6;
+}
+message RecommendFriends {
+  repeated RelationCharacterData items = 1;
+}
+message SearchFriendsRequest {
+  optional int32 index = 1;
+  optional int32 count = 2;
+  optional string content = 3;
+}
+message SearchFriendsResponse {
+  optional int32 index = 1;
+  optional int32 total = 2;
+  repeated RelationCharacterData items = 3;
+}
+message FriendExtensionData {
+  required int64 ID = 1;
+  optional int32 lv = 2;
+  optional int32 power = 3;
+  optional int64 level = 4;
+  optional bool online = 5;
+  optional int64 lastOfflineTimestamp = 6;
+  optional int32 vipLv = 7;
+}
+message FriendExtensionsResponse {
+  repeated FriendExtensionData items = 1;
+}
+message PrestigeRankData {
+  optional PrestigeRankItem myRank = 1;
+  repeated PrestigeRankItem topRanks = 2;
+}
+message PrestigeRankItem {
+  optional int64 id = 1;
+  optional string name = 2;
+  optional int32 rank = 3;
+  optional int32 prestige = 4;
+  optional int64 type = 5;
+  optional int32 lv = 6;
+  optional int32 totalPrestige = 7;
+  optional int32 power = 8;
+  repeated int64 heroTypes = 9;
+}
+message LevelStarRankData {
+  optional LevelStarRankItem myRank = 1;
+  repeated LevelStarRankItem topRanks = 2;
+}
+message LevelStarRankItem {
+  optional int64 id = 1;
+  optional string name = 2;
+  optional int32 rank = 3;
+  optional int32 value = 4;
+  optional int64 type = 5;
+  optional int32 lv = 6;
+  optional int32 power = 7;
+  repeated int64 heroTypes = 8;
+}
+message OrganizationData {
+  enum JoinType {
+    Freedom = 1;
+    Identify = 2;
+    Refuse = 3;
+  }
+  required int64 id = 1;
+  optional string name = 2;
+  optional int32 code = 3;
+  optional int32 power = 4;
+  optional int32 lvLimit = 5;
+  optional int32 memberCount = 6;
+  optional string notice = 7;
+  optional JoinType type = 8;
+  optional int32 onlineMember = 9;
+}
+message OrganizationDataList {
+  repeated OrganizationData datas = 1;
+  repeated int64 reqOrganizationIDList = 2;
+}
+message OrganizationRecordData {
+  enum OrganizationAction {
+    Join = 1;
+    Left = 2;
+    KnockOut = 3;
+    Promote = 4;
+  }
+  required int64 id = 1;
+  required int64 targetID = 2;
+  optional string name = 3;
+  optional int64 date = 4;
+  optional OrganizationAction action = 5;
+  optional int64 operateID = 6;
+  optional string operateName = 7;
+}
+message OrganizationRequestData {
+  required CharacterShowData character = 1;
+  optional int64 date = 2;
+}
+message OrganizationMemberData {
+  enum Position {
+    Ordinary = 1;
+    Assistant = 2;
+    Lead = 3;
+  }
+  optional CharacterShowData baseData = 1;
+  optional Position position = 2;
+}
+message OrganizationOfCharacterData {
+  enum Position {
+    Ordinary = 1;
+    Assistant = 2;
+    Lead = 3;
+  }
+  required OrganizationData data = 1;
+  repeated OrganizationMemberData members = 2;
+  repeated OrganizationRecordData records = 3;
+  repeated OrganizationRequestData requests = 4;
+  optional Position characterPosition = 5;
+  optional int32 WorshipTimes = 7;
+  optional int32 beWorshippedTimes = 8;
+  optional int32 worshipAward = 9;
+}
+message CreateOrganization {
+  optional string name = 1;
+  optional int32 code = 2;
+}
+message SearchOrganization {
+  optional string name = 1;
+  optional int32 id = 2;
+}
+message ResetOrganizationInfo {
+  enum JoinType {
+    Freedom = 1;
+    Identify = 2;
+    Refuse = 3;
+  }
+  optional int32 code = 1;
+  optional JoinType type = 2;
+  optional int32 lvLimit = 3;
+}
+message OrganizationRequestCall {
+  enum CallType {
+    MaxCount = 1;
+    Refuse = 2;
+    SameName = 3;
+    CDTime = 4;
+  }
+  optional CallType type = 1;
+  optional int64 message = 2;
+}
+message BuyPropRecordData {
+  required int64 id = 1;
+  required int64 type = 2;
+  required int32 totalCount = 3;
+  required int64 endDate = 4;
+}
+message LimitShopData {
+  repeated LimitShopItemData datas = 1;
+}
+message LimitShopItemData {
+  required int64 type = 1;
+  optional int32 leftCount = 2;
+}
+message Goday {
+  optional int32 serverBirthDays = 1;
+}
+message IDStringMessage {
+  optional string name = 1;
+  optional int64 id = 2;
+}
+message SStringMessage {
+  optional string name1 = 1;
+  optional string name2 = 2;
+}
+message StringMessageList {
+  repeated string message = 1;
+}
+message IDStringMessageList {
+  repeated IDStringMessage idstrList = 1;
+}
+message TodoSysytem {
+  optional int32 organization = 1;
+  optional int32 arena = 2;
+}
+message TeamSkillInfo {
+  repeated int32 typeList = 1;
+}
+message TeamSkillActivateInfo {
+  optional int32 type = 1;
+  optional int32 itemType = 2;
+  optional int32 itemCount = 3;
+}
+message ActivityData {
+  optional OnlineAwardRecordData onlineAwardRecord = 1;
+  optional LevelActivityInfo levelActivityInfo = 2;
+  optional LotteryActivityInfo lotteryActivityInfo = 3;
+  optional LoginDaysActivityData loginDaysActivityData = 4;
+  optional MissionOfSevenDaysData missions = 5;
+  optional TimeLimitedHerosData timeLimitedHeros = 6;
+  optional CollectExchangeData collectExchange = 7;
+  optional HolidayLoginActivityData holidayLoginActivityData = 8;
+  optional ConquerCityActivityData conquerCityActivityData = 9;
+  optional RegisterTimeAwardActivityData registerTimeAward = 10;
+  optional BossFightActivityData bossData = 11;
+  optional FightRankActivityData fightRankActivityData = 12;
+  optional LimitedLotteryActivityData limitedLotteryActivityData = 13;
+}
+message OnlineAwardRecordData {
+  optional int32 grade = 1;
+  optional int32 minutes = 2;
+  optional int32 targetMinutes = 3;
+  repeated AwardSpecData awards = 4;
+}
+message SinglePayActivityData {
+  repeated AwardSpecData awards = 1;
+  optional SinglePayRecordData record = 2;
+  optional int64 nextRefreshTime = 3;
+  optional ActivityTime activityTime = 4;
+  repeated ActivityTimeRegion timeRegion = 5;
+  optional int32 isStart = 6;
+}
+message SinglePayRecordData {
+  optional int32 status = 1;
+  optional int32 awardIndex = 2;
+}
+message TotalConsumeActivityData {
+  optional TotalConsumeRecordsData record = 1;
+  optional ActivityTime activityTime = 2;
+  optional int32 totalConsume = 3;
+  optional int32 isStart = 4;
+}
+message TotalConsumeRecordsData {
+  repeated GradStatusData status = 1;
+}
+message GradStatusData {
+  optional int32 Grade = 1;
+  optional int32 GradeConsume = 2;
+  optional int32 status = 3;
+  repeated AwardSpecData awards = 4;
+  repeated AwardSpecData payAwards = 5;
+}
+message SecretShopActivityData {
+  optional SecretShopRecordData record = 1;
+  optional int64 nextTime = 2;
+  optional ActivityTime activityTime = 3;
+  repeated ActivityTimeRegion timeRegion = 4;
+  optional int32 isStart = 5;
+}
+message SecretShopRecordData {
+  repeated SecretShopPropData props = 1;
+}
+message SecretShopPropData {
+  optional int64 type = 1;
+  optional int32 count = 2;
+  optional int32 price = 3;
+  optional int32 status = 4;
+  optional int32 index = 5;
+  optional string showGroupName = 6;
+  optional int32 originalPrice = 7;
+}
+message ActivityGroupData {
+  optional SinglePayActivityData singlePay = 1;
+  optional SecretShopActivityData SecretShop = 2;
+  optional TotalConsumeActivityData totalConsume = 3;
+  optional TotalPayActivityData totalPay = 4;
+  optional OnePayActivityData onePay = 5;
+  optional LoginDaysActivityData loginDays = 6;
+  optional MissionOfSevenDaysData missions = 7;
+  optional TimeLimitedHerosData timeLimitedHeros = 8;
+  optional CollectExchangeData CollectExchange = 9;
+  optional int32 DailyPay = 10 [default = -1];
+  optional ShowLotteryDrawActivityData lotteryDrawActivity = 11;
+  optional SinglePayActivityData singlePayAwardActivity = 12;
+  optional HolidayLoginActivityData holidayLoginActivityData = 13;
+  optional ActivityShopData activityShopData = 14;
+  optional TotalPerPayAfterGetActivityData totalPerPayAfterGetActivity = 15;
+  optional FightRankActivityData fightRankActivityData = 16;
+  optional RegisterTimeAwardActivityData registerTimeAward = 17;
+  optional LimitedLotteryActivityData limitedLotteryActivityData = 18;
+}
+message ActivityTime {
+  optional int64 startTime = 1;
+  optional int64 endTime = 2;
+}
+message ActivityTimeRegion {
+  optional string startTime = 1;
+  optional string endTime = 2;
+}
+message LevelActivityInfo {
+  optional string expRate = 1;
+  optional string itemRate = 2;
+  optional int32 levelType = 3;
+  optional ActivityTime time = 4;
+  optional int32 isStart = 5;
+}
+message LotteryActivityInfo {
+  optional int32 discount = 1;
+  optional int32 discountTimes = 2;
+  optional ActivityTime time = 3;
+  optional int32 isStart = 4;
+  optional int32 type = 5;
+  optional int32 leftTimes = 6;
+}
+message TotalPerPayAfterGetActivityData {
+  optional TotalPerPayAfterGetRecordsData record = 1;
+  optional ActivityTime activityTime = 2;
+  optional int32 totalPay = 3;
+  optional int32 isStart = 4;
+  optional int64 totalPayEndTime = 5;
+  optional int64 totalPaySendTime = 6;
+}
+message TotalPerPayAfterGetRecordsData {
+  repeated GradStatusData status = 1;
+}
+message TotalPayActivityData {
+  optional TotalPayRecordsData record = 1;
+  optional ActivityTime activityTime = 2;
+  optional int32 totalPay = 3;
+  optional int32 isStart = 4;
+}
+message TotalPayRecordsData {
+  repeated GradStatusData status = 1;
+}
+message RegisterTimeAwardActivityData {
+  optional RegisterTimeAwardRecordsData record = 1;
+  optional ActivityTime activityTime = 2;
+  optional int32 registerDays = 3;
+  optional int32 isStart = 4;
+}
+message RegisterTimeAwardRecordsData {
+  repeated GradStatusData status = 1;
+}
+message OnePayActivityData {
+  optional OnePayRecordsData record = 1;
+  optional ActivityTime activityTime = 2;
+  optional int32 isStart = 3;
+}
+message OnePayRecordsData {
+  repeated GradeTimesStatusData status = 1;
+}
+message GradeTimesStatusData {
+  optional int32 grade = 1;
+  optional int32 gradeValue = 2;
+  optional int32 checkTimes = 3;
+  optional int32 usedTimes = 4;
+  optional int32 status = 5;
+  repeated AwardSpecData awards = 6;
+}
+message LoginDaysActivityData {
+  optional StatuesRecordsData record = 1;
+  optional ActivityTime activityTime = 2;
+  optional int32 isStart = 3;
+}
+message HolidayLoginActivityData {
+  optional StatuesRecordsData record = 1;
+  optional int32 isStart = 2;
+  optional int32 PayState = 3;
+  optional ActivityTime activityTime = 4;
+  optional int32 PayShop = 5;
+  optional int32 ShowType = 6;
+  optional string Des = 7;
+}
+message ConquerCityActivityData {
+  optional int32 isStart = 1;
+  optional ActivityTime activityTime = 2;
+  repeated ConquerCityAwardData awardData = 3;
+  repeated ConquerCityLevelData levelData = 4;
+  optional int32 CityStyle = 5;
+  optional string CityName = 6;
+}
+message BossFightActivityData {
+  optional int32 levelId = 1;
+  optional int32 isStart = 2;
+  optional ActivityTime activityTime = 3;
+  optional int64 rankOnce = 4;
+  optional int64 rankTotal = 5;
+  optional int64 bestDamage = 6;
+  optional int64 totalDamage = 7;
+}
+message TowerFightActivityData {
+  optional int32 isStart = 1;
+  optional ActivityTime activityTime = 2;
+  optional int32 round = 3;
+  optional int32 origin = 4;
+  optional int64 nextResetTime = 5;
+  optional int32 historyMaxSceneLevel = 6;
+  optional int32 cycleMaxSceneLevel = 7;
+  optional int32 rank = 8;
+  optional int64 rankScore = 9;
+}
+message FightRankRewardData {
+  optional int32 minRank = 1;
+  optional int32 maxRank = 2;
+  repeated AwardSpecData awards = 3;
+}
+message FightRankActivityData {
+  optional int32 isStart = 1;
+  optional ActivityTime activityTime = 2;
+  optional int32 rankType = 3;
+  optional string rankName = 4;
+  optional int32 selfRank = 5;
+  optional int64 selfScore = 6;
+  optional string des = 7;
+  repeated FightRankRewardData rewards = 8;
+  optional string title = 9;
+}
+message ConquerCityAwardData {
+  optional int32 Star = 1;
+  repeated AwardSpecData ResultAward = 2;
+}
+message ConquerCityLevelData {
+  optional int32 LevelID = 1;
+  repeated ConquerCityMission Missions = 2;
+  repeated BattleHeroData Heros = 3;
+  optional int32 DirIndex = 4;
+  optional int32 BattleID = 5;
+  optional int64 FlagID = 6;
+  repeated HeroData HeroCopys = 7;
+  repeated int64 FlagPartTypes = 8;
+  repeated int32 Conditions = 9;
+  optional int32 Star = 10;
+}
+message ConquerCityMission {
+  optional int32 MissionID = 1;
+  optional bool MissionStatus = 2;
+}
+message CompeteEntranceData {
+  optional ConquerCityActivityData conquerCityActivityData = 1;
+  optional CrossRealmWarTotalData crossRealmWarTotalData = 2;
+  optional BossFightActivityData bossData = 3;
+  optional TowerFightActivityData towerData = 4;
+}
+message StatuesRecordsData {
+  repeated GradStatusData status = 1;
+}
+message MissionOfSevenDaysData {
+  optional int64 Type = 1;
+  optional ActivityTime activityTime = 2;
+  optional int32 isStart = 3;
+}
+message TimeLimitedHerosData {
+  repeated int64 group = 1;
+  optional int32 rate = 2;
+  optional ActivityTime activityTime = 3;
+  repeated ActivityTimeRegion timeRegion = 4;
+  optional int32 isStart = 5;
+}
+message ActivityLevelGroupData {
+  repeated ActivityLevelData levelGroup = 1;
+  repeated TherionBaseInfo baseInfo = 2;
+}
+message ActivityLevelData {
+  optional int32 Type = 1 [default = -1];
+  optional ActivityTime previewTime = 2;
+  optional ActivityTime activityTime = 3;
+  optional int32 isStart = 4 [default = -1];
+}
+message CollectExchangeData {
+  repeated int64 DropItems = 1;
+  repeated GradeExchangeData Grades = 2;
+  optional ActivityTime activityTime = 3;
+  optional int32 isStart = 4 [default = -1];
+}
+message ActivityShopData {
+  repeated GradeExchangeData Grades = 1;
+  optional ActivityTime activityTime = 2;
+  optional int32 isStart = 3 [default = -1];
+}
+message GradeExchangeData {
+  optional int32 Grade = 1;
+  optional int32 CheckTimes = 2;
+  optional int32 UsedTimes = 3;
+  repeated AwardSpecData NeedItems = 4;
+  repeated AwardSpecData ResultAward = 5;
+  optional bool IsLimit = 6;
+  optional string GroupName = 7;
+}
+message DailyPayActivityData {
+  optional StatuesRecordsData record = 1;
+  optional ActivityTime activityTime = 2;
+  optional int32 isStart = 3;
+}
+message LimitedLotteryRewardStageData {
+  optional int64 id = 1;
+  optional int32 score = 2;
+  repeated AwardSpecData awards = 3;
+}
+message LimitedLotteryRankRewardData {
+  optional int64 id = 1;
+  optional int32 minRank = 2;
+  optional int32 maxRank = 3;
+  optional int32 limitedScore = 4;
+  repeated AwardSpecData awards = 5;
+}
+message LimitedLotteryActivityData {
+  optional int64 infoID = 1;
+  optional int32 isStart = 2;
+  optional int32 guaranteedProgress = 3;
+  optional int32 limitedLotteryScore = 4;
+  optional int32 selfRank = 5;
+  optional ActivityTime activityTime = 6;
+  repeated LimitedLotteryDrawRecordData drawRecords = 7;
+  optional bool isNew = 8;
+  optional int32 itemRewardProgress = 9;
+  optional int32 itemRewardSeed = 10;
+  optional int32 itemRewardSeq = 11;
+  repeated int32 receivedRewardStage = 12;
+}
+message LimitedLotteryPropCountData {
+  optional int32 propCount = 1;
+}
+message LimitedLotteryNewTipData {
+  optional bool isNew = 1;
+}
+message LimitedLotteryDrawRecordData {
+  optional string playerName = 1;
+  optional int64 characterID = 2;
+  optional int64 time = 3;
+  repeated AwardSpecData awards = 4;
+}
+message LimitedLotterySelfDrawRecordData {
+  optional int32 drawIndex = 1;
+  repeated AwardSpecData awards = 2;
+  optional int64 time = 3;
+}
+message LimitedLotterySelfDrawRecordsData {
+  repeated LimitedLotterySelfDrawRecordData records = 1;
+  optional int32 total = 2;
+  optional int32 index = 3;
+}
+message LimitedLotteryDrawItemData {
+  optional int32 index = 1;
+  optional int32 isGuaranteed = 2;
+  repeated AwardSpecData awards = 3;
+}
+message ReceiveLimitedLotteryRewardStagesData {
+  optional int32 limitedLotteryScore = 1;
+  repeated int32 receivedRewardStage = 2;
+  optional AwardResult awardResult = 3;
+  repeated int32 receivableStages = 4;
+}
+message LimitedLotteryDrawData {
+  optional int64 infoID = 1;
+  optional int32 count = 2;
+  optional int32 guaranteedProgress = 3;
+  optional int32 limitedLotteryScore = 4;
+  optional int32 selfRank = 5;
+  repeated LimitedLotteryDrawItemData draws = 6;
+  repeated LimitedLotteryDrawRecordData drawRecords = 7;
+}
+message ChangeNameData {
+  optional int32 result = 1;
+  optional string newName = 2;
+}
+message ChangeAccountData {
+  optional int32 result = 1;
+  optional string newAccount = 2;
+}
+message CharacterDetail {
+  optional int64 leftAddEPSeconds = 1;
+  optional int64 leftFullEPSeconds = 2;
+}
+message UseActivationCodeCallBack {
+  enum CallType {
+    Successed = 1;
+    PlatformLimit = 2;
+    BeUsed = 3;
+    UsedInThisServer = 4;
+    OneServerLimit = 5;
+    CodeIsNotExist = 6;
+    TypeBeUsed = 7;
+    Deadline = 8;
+    Startline = 9;
+    UseServer = 10;
+    VipLimit = 11;
+  }
+  optional CallType type = 1;
+}
+message MarqueeData {
+  enum MarqueeType {
+    LotteryHero = 1;
+    AwakenHero = 2;
+    SyntheticHero = 3;
+    EvolveHero = 4;
+    VIPGetHero = 5;
+    Level = 6;
+    LotteryEquip = 7;
+    ArenaLevel = 8;
+    HeroCard = 9;
+    EquipCard = 10;
+    FastenFate = 11;
+    EquipUpStar = 12;
+    CrossWarSuperHero = 13;
+    FirstPay = 14;
+    Message = 20;
+    ArenaTop1_Login = 101;
+    ArenaTop2_Login = 102;
+    ArenaTop3_Login = 103;
+    PowerRankTop1_Login = 111;
+    PowerRankTop2_Login = 112;
+    PowerRankTop3_Login = 113;
+    StarRankTop1_Login = 121;
+    StarRankTop2_Login = 122;
+    StarRankTop3_Login = 123;
+  }
+  optional MarqueeType type = 1;
+  optional string UserName = 2;
+  optional string TargetName = 3;
+  optional string param1 = 4;
+  optional string param2 = 5;
+}
+message FateFastenInfo {
+  repeated FateRecordData fateInfo = 1;
+  optional int64 targetHeroID = 3;
+  optional int32 targetOldPower = 4;
+  optional int32 targetNewPower = 5;
+  optional int64 targetFateType = 6;
+}
+message FateRecordData {
+  optional int64 type = 1;
+  repeated FateGroupData groups = 2;
+}
+message FateGroupData {
+  optional int32 group = 1;
+  optional int32 exp = 2;
+  optional int32 Complete = 3;
+}
+message CoinCritRateInfo {
+  optional int32 rate = 1;
+  optional int32 coin = 2;
+  optional int32 rateCoin = 3;
+}
+message FirstPassLevelInfo {
+  optional int64 SceneType = 1;
+  optional string name = 2;
+  optional int32 Difficulty = 3;
+  optional int32 freeTime = 4;
+  optional int32 totalFreeTimes = 5;
+}
+message CrossRealmWarBattleRecord {
+  optional BattleRecordData battleRecord = 1;
+  optional int32 result = 2;
+  optional int32 leftHeroNum = 3;
+}
+message CrossRealmWarTimes {
+  optional int64 startTime = 1;
+  optional int64 endTime = 2;
+  optional int64 SignUpEndTime = 3;
+  optional int64 FirstWarBeginTime = 4;
+  optional int64 FirstWarEndTime = 5;
+  optional int64 FirstAwardTime = 6;
+  optional int64 SecondWarBeginTime = 7;
+  optional int64 SecondWarEndTime = 8;
+  optional int64 SecondAwardTime = 9;
+  optional int64 PreviewEndTime = 10;
+  optional CrossRealmWarStatues statues = 11;
+  optional int32 isStart = 12 [default = -1];
+  optional int64 AwardHeroType = 13;
+}
+message CrossRealmWarTotalData {
+  optional WarCharacterInfo characterInfo = 1;
+  optional CrossRealmWarTimes time = 2;
+  optional WarBattleRecordsData challengeInfo = 3;
+  optional WarGroupRankData rankInfo = 4;
+  optional int32 isStart = 5 [default = -1];
+  optional int32 isSignUp = 6 [default = -1];
+  optional bool isAutoSignUp = 7 [default = false];
+}
+message UpdateWarCharacter {
+  required WarCharacterInfo characterInfo = 1;
+}
+message WarCharacterInfo {
+  optional int64 ID = 1;
+  optional string Name = 2;
+  optional int32 title = 3;
+  optional int32 medal = 4;
+  optional int32 winTimes = 5;
+  optional int32 lossTimes = 6;
+  optional int32 warEnergy = 7;
+  optional string Platform = 8;
+  optional int32 Rank = 9;
+  optional int32 Power = 10;
+  optional HeadType characterType = 11;
+  optional int32 Lv = 12;
+  optional int32 DisplayIndex = 13;
+  optional int32 totalMedal = 14;
+  optional int32 bestTitle = 15;
+  optional int32 totalWinTimes = 16;
+  optional int32 totalLossTimes = 17;
+  optional int32 buyWarEnergyTimes = 18;
+  optional int32 buyWarEnergy = 19;
+}
+message WarBattleRecordsData {
+  repeated WarBattleRecordBaseInfo records = 1;
+}
+message WarBattleRecordBaseInfo {
+  optional WarCharacterInfo challengeInfo = 1;
+  optional WarCharacterInfo targetInfo = 2;
+  optional int32 result = 3;
+  optional int32 medals = 4;
+  optional int64 occurTime = 5;
+  required string key = 6;
+}
+message WarFormationHeroData {
+  optional HeroGroupData myGroup = 1;
+  optional WarBattleGroupData targetGroup = 2;
+}
+message WarBattleGroupData {
+  optional WarCharacterInfo characterInfo = 1;
+  repeated HeroData heros = 2;
+  repeated int64 flagParts = 3;
+}
+message CrossRealmWarStatues {
+  enum PhaseType {
+    Preview = 1;
+    SignUp = 2;
+    FirstWar = 3;
+    FirstAward = 4;
+    SecondWar = 5;
+    SecondAward = 6;
+    WaitingForSecond = 7;
+    WaitingForEnd = 8;
+  }
+  optional PhaseType Phase = 1;
+}
+message WarGroupRankData {
+  repeated WarRankBaseInfo groupRank = 1;
+}
+message WarSuperHeroData {
+  repeated WarRankBaseInfo medalRank = 1;
+  repeated WarRankBaseInfo winRateRank = 2;
+  optional int32 lastData = 3 [default = -1];
+  optional int64 lastSignUpTime = 4;
+  optional int64 lastSecondAwardEndTime = 5;
+}
+message WarRankBaseInfo {
+  optional WarCharacterInfo characterInfo = 1;
+  repeated WarHeroBaseInfo formationHeros = 2;
+}
+message WarHeroBaseInfo {
+  optional int64 type = 1 [default = -1];
+  optional int32 quality = 2;
+  optional int32 isGoldenHero = 3 [default = -1];
+}
+message WarChangeHeroData {
+  required int32 type = 1;
+  required int64 ID = 2;
+  optional string newName = 3;
+}
+message ShowWarBattle {
+  required string key = 1;
+  required int64 ID = 2;
+}
+message WarActivityStatuesData {
+  repeated WarActivityStatues statues = 1;
+}
+message WarActivityStatues {
+  enum Statues {
+    None = -1;
+    SignUp = 1;
+    War = 2;
+    GoldenHero = 3;
+  }
+  optional Statues Statue = 1;
+  optional int32 Param = 2 [default = -1];
+}
+message ErrorMessage {
+  optional string message = 1;
+}
+message HeadType {
+  optional int64 type = 1;
+  optional int32 border = 2;
+  optional int32 honorIconFrame = 3;
+}
+message CallHeroRecord {
+  optional int32 type = 1;
+  optional int32 count = 2;
+}
+message CountRecord {
+  optional int64 type = 1;
+  optional int32 count = 2;
+}
+message VoteSystemData {
+  optional ActivityTime activityTime = 1;
+  optional int32 isStart = 2 [default = -1];
+  optional int32 voteMethod = 3;
+  optional string theme = 4;
+  optional string description = 5;
+  repeated VoteContentInfo content = 6;
+  optional int32 isVoted = 7 [default = -1];
+  repeated int32 votedOptions = 8;
+  repeated int32 answers = 9;
+  repeated AwardSpecData Awards = 10;
+  repeated AwardSpecData RightAwards = 11;
+}
+message VoteContentInfo {
+  optional int32 option = 1;
+  optional string content = 2;
+  optional int32 votedNum = 3;
+}
+message ActivityInteractionData {
+  optional int64 ActivityID = 1;
+  optional int32 Action = 2;
+  optional ActionTargetCategory TargetCategory = 3;
+  optional int64 TargetID = 4;
+  optional string Param = 5;
+}
+message LotteryDrawActivityCellType {
+  optional int32 index = 1;
+  optional AwardSpecData award = 2;
+  optional int32 Probability = 3;
+}
+message ShowLotteryDrawActivityData {
+  optional int64 ID = 1;
+  optional ActivityTime Date = 2;
+  repeated LotteryDrawActivityCellType Cells = 3;
+  repeated IDCountMessage Currencies = 4;
+  optional int32 Times = 5;
+  repeated int32 Indexes = 6;
+  optional int32 keyCount = 7;
+  optional int32 currency = 8;
+  optional int32 price = 9;
+}
+message LotteryDrawActivityResultData {
+  optional int64 ID = 1;
+  optional int32 Index = 2;
+  optional int32 KeyCount = 3;
+  optional AwardResult Awards = 4;
+}
+message ChangeAccountRequest {
+  optional string name = 1;
+  optional string password = 2;
+  optional int32 age = 3;
+}
+message RankDatas {
+  repeated ArenaPlayerData arenaRank = 1;
+  repeated ArenaPlayerData powerRank = 2;
+  repeated ArenaPlayerData starRank = 3;
+}
+message RankItemData {
+  required int64 characterId = 1;
+  required string name = 2;
+  required int32 rank = 3;
+  required int64 score = 4;
+  optional int32 level = 5;
+  optional int64 characterType = 6;
+  optional int32 power = 7;
+  optional HeadType headType = 8;
+  optional int32 vipLevel = 9;
+  optional int64 timestamp = 10;
+  repeated RankHeroData heroDatas = 11;
+  repeated int64 flagParts = 12;
+}
+message RankHeroData {
+  required int64 id = 1;
+  optional int64 type = 2 [default = -1];
+  optional int32 grade = 3 [default = -1];
+  optional int32 lv = 4 [default = -1];
+  optional int32 awakenLv = 5 [default = -1];
+  optional int32 isGoldenHero = 6 [default = -1];
+}
+message RankListRequest {
+  required int32 rankType = 1;
+  optional int32 startRank = 2 [default = 1];
+  optional int32 count = 3 [default = 50];
+}
+message RankListRepeatedRequest {
+  repeated RankListRequest requests = 1;
+}
+message RankTypeRequest {
+  required int32 rankType = 1;
+}
+message RankNearbyRequest {
+  required int32 rankType = 1;
+  optional int32 range = 2 [default = 10];
+}
+message RankHistoryRequest {
+  required int32 rankType = 1;
+  required int64 timestamp = 2;
+}
+message RankListResponse {
+  required int32 rankType = 1;
+  repeated RankItemData items = 2;
+  optional int32 totalCount = 3;
+  optional RankItemData selfRank = 4;
+  optional int64 nextRefreshTime = 5;
+  optional int32 seasonId = 6;
+}
+message RankListRepeatedResponse {
+  repeated RankListResponse responses = 1;
+}
+message RankSelfResponse {
+  required int32 rankType = 1;
+  optional RankItemData selfRank = 2;
+  optional int32 historyBestRank = 3;
+  optional int64 nextRefreshTime = 4;
+}
+message RankChangeData {
+  required int32 rankType = 1;
+  required int32 newRank = 2;
+  required int32 oldRank = 3;
+  optional int64 score = 4;
+}
+message RankConfigItem {
+  required int32 rankType = 1;
+  required string name = 2;
+  required int32 category = 3;
+  optional int32 maxRank = 4;
+  optional string resetTime = 5;
+  optional int32 rewardConfigId = 6;
+  optional bool isCrossServer = 7 [default = false];
+}
+message RankConfigData {
+  repeated RankConfigItem configs = 1;
+}
+message BaguaStatus {
+  optional int32 currentResult = 1;
+  optional bool isSuccess = 2;
+  repeated AwardSpecData remainWarBookTypes = 3;
+}
+message TestFlagDrawData {
+  repeated BaguaStatus awards = 1;
+  repeated IDListMessage idLists = 2;
+  repeated int32 baguaStatus = 3;
+}
+message DivinationData {
+  optional FlagDrawEvent event = 1;
+  optional BaguaStatus baguaStatus = 2;
+}
+message DivinationResultData {
+  optional FlagDrawEvent event = 1;
+  optional int32 divinationCount = 2;
+}
+message WarBookRecordData {
+  optional int32 mapID = 1;
+  optional int32 lv = 2;
+  optional BaguaStatus baguaStatus = 3;
+  optional bool startDrawState = 4;
+  optional int32 lvExp = 5;
+  optional int32 addBagFlagEffect = 6;
+  optional int32 addPerFlagEffect = 7;
+  optional int32 reduceCostFlagEffect = 8;
+  optional int32 currentevent = 9;
+  optional int32 divinationCount = 10;
+  repeated int64 warMapNewTips = 11;
+}
+message BaguaStatusList {
+  repeated BaguaStatus baguaStatusData = 1;
+  optional int32 stopReason = 2;
+}
+message EquipWarBookMessage {
+  optional int64 id = 1;
+  optional int64 targetId = 2;
+  optional int32 position = 3;
+}
+message WarBookData {
+  optional int64 id = 1;
+  optional int64 type = 2 [default = -1];
+  optional int64 host = 3 [default = -1];
+  optional int32 strengthenLv = 4 [default = -1];
+  optional int32 exp = 5 [default = -1];
+  optional AdditionData mainAddition = 6;
+  optional int64 position = 7 [default = -1];
+}
+message StrengthenWarBook {
+  optional int64 id = 1;
+  repeated int64 costIds = 2;
+}
+message IDCountMessageList {
+  repeated IDCountMessage idCount = 1;
+}
+message WarBookExchangeInfo {
+  optional WarBookData warBookData = 1;
+  optional IDCountMessage todayExchangeTimes = 2;
+}
+message BattleHeroData {
+  required int64 id = 1;
+  optional int32 position = 2;
+}
+message LansquenetData {
+  required HeroData data = 1;
+  repeated EquipData equips = 2;
+  optional int32 sourceType = 3;
+  optional int64 hireHeroId = 4;
+  optional int64 hireTime = 5;
+}
+message PlayModeLansquenetApplication {
+  optional PlayModeCategory categoryPlayMode = 1;
+  optional BattleGameplayLansquenetApplicationData lansquenetApplication = 2;
+}
+message UpdateBattleGameplaySquadDatas {
+  repeated UpdateBattleGameplaySquadData gameplayDataSquadFlags = 1;
+}
+message BattleGameplayData {
+  optional int32 category = 1;
+  repeated BattleGameplaySquadData squads = 2;
+}
+message BattlePlayModeData {
+  optional PlayModeCategory categoryPlayMode = 1;
+  repeated LansquenetData lansquenets = 2;
+  repeated int64 requestFriend = 3;
+  optional int32 behiredTimes = 4;
+}
+message BattleGameplayRequest {
+  required PlayModeCategory categoryPlayMode = 1;
+}
+message BattlePlayModeRequest {
+  required PlayModeCategory categoryPlayMode = 1;
+}
+message BattleGameplaySquadData {
+  optional int32 index = 1;
+  repeated BattleHeroData heros = 2;
+  optional int32 power = 3;
+  optional int64 flag = 4;
+}
+message IDBattleGameplay {
+  optional int64 id = 1;
+  required PlayModeCategory categoryPlayMode = 2;
+}
+message IDBattlePlayModeIndex {
+  required PlayModeCategory categoryPlayMode = 1;
+  optional int32 index = 2;
+  optional int64 id = 3;
+}
+message IDBattleGameplayIndex {
+  required int32 category = 1;
+  optional int32 index = 2;
+  repeated int64 heroIds = 3;
+  optional int64 flagID = 4;
+}
+message UpdateBattleGameplaySquadData {
+  required int32 category = 1;
+  required BattleGameplaySquadData squad = 2;
+  required PlayModeCategory categoryPlayMode = 3;
+  optional int32 handlerState = 4 [default = 0];
+}
+message EquipHeroToBattleGameplayIndexRequest {
+  required int32 category = 1;
+  required int32 index = 2;
+  required int64 id = 3;
+  optional int32 position = 4;
+  required PlayModeCategory categoryPlayMode = 5;
+}
+message EquipHeroToBattlePlayModeIndexRequest {
+  required PlayModeCategory categoryPlayMode = 1;
+  required int32 index = 2;
+  required int64 id = 3;
+  optional int32 position = 4;
+}
+message BattlePlayModeIndexHero {
+  required PlayModeCategory categoryPlayMode = 1;
+  required int32 index = 2;
+  required BattleHeroData hero = 3;
+}
+message BattlePlayModeIndexHeros {
+  required PlayModeCategory categoryPlayMode = 1;
+  required int32 index = 2;
+  repeated BattleHeroData heros = 3;
+}
+message BattleGameplayIndexHero {
+  required int32 category = 1;
+  required int32 index = 2;
+  required BattleHeroData hero = 3;
+}
+message BattleGameplayIndexHeros {
+  required int32 category = 1;
+  required int32 index = 2;
+  repeated BattleHeroData heros = 3;
+}
+message BattleGameplayPowerChange {
+  required int32 category = 1;
+  required int32 index = 2;
+  required int32 power = 3;
+}
+message BattleGameplayFormationData {
+  optional int32 index = 1;
+  repeated BattleHeroData heros = 2;
+  required PlayModeCategory categoryPlayMode = 3;
+  optional int64 flagID = 4;
+}
+message BattleGameplayFormationsData {
+  required PlayModeCategory categoryPlayMode = 1;
+  repeated BattleGameplayFormationData items = 2;
+}
+message SelectBattleGameplayIndexRequest {
+  required int32 category = 1;
+  optional int32 formation = 2;
+  optional int32 squad = 3;
+  required PlayModeCategory categoryPlayMode = 4;
+}
+message UpdateBattleGameplayFormationRequest {
+  required int32 category = 1;
+  optional int32 index = 2;
+  optional string name = 3;
+  required PlayModeCategory categoryPlayMode = 4;
+}
+message UpdateBattleGameplayFormationData {
+  required PlayModeCategory categoryPlayMode = 1;
+  required BattleGameplayFormationData formation = 2;
+}
+message DeleteLansquenetData {
+  required PlayModeCategory categoryPlayMode = 1;
+  required int64 id = 2;
+}
+message BattleGameplayLansquenetData {
+  optional int64 hireableHeroId = 1;
+}
+message BattleGameplaySystemHireHerosData {
+  required PlayModeCategory categoryPlayMode = 1;
+  repeated LansquenetData heros = 2;
+  repeated int64 viewedHireHeroIds = 3;
+}
+message BattleGameplayFriendLansquenetsRequest {
+  required PlayModeCategory categoryPlayMode = 1;
+  required int32 index = 2;
+  required int32 count = 3;
+}
+message BattleGameplayFriendLansquenet {
+  required int64 id = 1;
+  optional HeroData hero = 2;
+  repeated EquipData equips = 3;
+}
+message BattleGameplayFriendLansquenets {
+  required int32 index = 1;
+  repeated BattleGameplayFriendLansquenet items = 2;
+}
+message BattleGameplayLansquenetApplicationsRequest {
+  required PlayModeCategory categoryPlayMode = 1;
+  required int32 index = 2;
+  required int32 count = 3;
+}
+message BattleGameplayLansquenetApplicationData {
+  required int64 id = 1;
+  required string target = 2;
+  required string hero = 3;
+}
+message BattleGameplayLansquenetApplications {
+  required int32 total = 1;
+  required int32 index = 2;
+  repeated BattleGameplayLansquenetApplicationData items = 3;
+}
+message HandleBattleGameplayLansquenetApplicationRequest {
+  required PlayModeCategory categoryPlayMode = 1;
+  required int64 id = 2;
+  optional int32 value = 3;
+}
+message SupplyLineCutoffActivityPlayerData {
+  required int64 id = 1;
+  required string name = 2;
+}
+message SupplyLineCutoffActivityData {
+  optional SupplyLineCutoffActivityPlayerStatus status = 1;
+  repeated SupplyLineCutoffActivityPlayerData players = 2;
+}
+message SupplyLineCutoffActivityBattleZoneScenePlayerData {
+  required int64 id = 1;
+  required string name = 2;
+  optional int32 power = 3;
+  optional int32 score = 4;
+  optional int32 wins = 5;
+  optional int32 losses = 6;
+}
+message SupplyLineCutoffActivityBattleZoneRankingItemData {
+  required string name = 1;
+  optional int32 value = 2;
+}
+message SupplyLineCutoffActivityBattleZoneData {
+  repeated SupplyLineCutoffActivityBattleZoneScenePlayerData players = 1;
+  repeated SupplyLineCutoffActivityBattleZoneRankingItemData rankingItems = 2;
+}
+message SupplyLineCutoffActivityBattleZoneBattleSquadData {
+  required int32 index = 1;
+  repeated HeroData heros = 2;
+  optional int32 power = 3;
+  optional int32 score = 4;
+  optional int64 nextAttackableTimestamp = 5;
+}
+message SupplyLineCutoffActivityBattleZonePlayerData {
+  repeated SupplyLineCutoffActivityBattleZoneBattleSquadData battleSquads = 1;
+}
+message AttackSupplyLineCutoffActivityBattleZonePlayerResultRequest {
+  required int64 targetId = 1;
+  required int32 squadIndex = 2;
+  required BattleRecordData data = 3;
+  optional BattleResult result = 4;
+}
+message SupplyLineCutoffActivityRankingItemData {
+  required CharacterShowData player = 1;
+  optional int32 score = 2;
+}
+message SupplyLineCutoffActivityRankingData {
+  required int32 total = 1;
+  optional int32 index = 2;
+  repeated SupplyLineCutoffActivityRankingItemData items = 3;
+  required SupplyLineCutoffActivityRankingItemData self = 4;
+}
+message SupplyLineCutoffActivityBattleRecordItemData {
+  required int64 id = 1;
+  required CharacterShowData player = 2;
+  optional int64 creationTimestamp = 3;
+  optional int32 result = 4;
+}
+message SupplyLineCutoffActivityBattleRecordsData {
+  required int32 total = 1;
+  optional int32 index = 2;
+  repeated SupplyLineCutoffActivityBattleRecordItemData items = 3;
+}
+message BossFightBeginRequest {
+  required int64 id = 1;
+  repeated int32 randomValues = 2;
+  repeated BattleGroupData groups = 3;
+  optional HeroGroupData myGroup = 4;
+  optional bool practiceMode = 5;
+}
+message BossFightQuickEnd {
+  required int64 id = 1;
+}
+message BossFightEndResponse {
+  required bool success = 1;
+  optional string errorMsg = 2;
+  optional int64 damage = 3;
+  optional int64 bestDamage = 4;
+  optional int64 totalDamage = 5;
+  optional int32 rankOnce = 6;
+  optional int32 rankTotal = 7;
+  repeated AwardSpecData awards = 8;
+  required int64 id = 9;
+  optional string battleID = 10;
+}
+message TowerFightBeginRequest {
+  required int64 id = 1;
+}
+message TowerFightEndResponse {
+  required bool success = 1;
+  optional string errorMsg = 2;
+  required int64 id = 3;
+  optional int32 sceneLevel = 4;
+  optional string battleID = 5;
+  optional AwardResult awards = 6;
+  optional TowerFightActivityData data = 7;
+}
+message TowerFightSweepLevelResult {
+  required int64 id = 1;
+  optional int32 sceneLevel = 2;
+  optional AwardResult awards = 3;
+}
+message TowerFightSweepResponse {
+  required bool success = 1;
+  optional string stopReason = 2;
+  optional int32 consumeCount = 3;
+  repeated TowerFightSweepLevelResult results = 4;
+  optional AwardResult totalAwards = 5;
+  optional TowerFightActivityData data = 6;
+}

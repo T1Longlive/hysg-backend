@@ -1,0 +1,1867 @@
+{
+  "online_award": {
+    "enabled": true,
+    "window": {
+      "always": true
+    },
+    "grades": [
+      {
+        "minute": 5,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 20002,
+            "count": 5
+          }
+        ]
+      },
+      {
+        "minute": 10,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 20002,
+            "count": 10
+          }
+        ]
+      },
+      {
+        "minute": 15,
+        "awards": [
+          {
+            "kind": "property",
+            "prop": "Coin",
+            "value": 20000
+          }
+        ]
+      },
+      {
+        "minute": 30,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 20007,
+            "count": 3
+          }
+        ]
+      },
+      {
+        "minute": 60,
+        "awards": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 100
+          }
+        ]
+      }
+    ]
+  },
+  "lv_award": {
+    "enabled": true,
+    "window": {
+      "always": true
+    },
+    "grades": "MissionConfig"
+  },
+  "login_days": {
+    "enabled": true,
+    "window": {
+      "openDays": 30
+    },
+    "grades": [
+      {
+        "day": 1,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 25026,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 25000,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 29910,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "day": 4,
+        "awards": [
+          {
+            "kind": "property",
+            "prop": "Coin",
+            "value": 50000
+          }
+        ]
+      },
+      {
+        "day": 5,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 25029,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "day": 6,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 29913,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "day": 7,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 20114,
+            "count": 1
+          },
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 200
+          }
+        ]
+      }
+    ]
+  },
+  "total_pay": {
+    "enabled": true,
+    "window": {
+      "always": true
+    },
+    "grades": [
+      {
+        "dollar": 60,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 20002,
+            "count": 20
+          },
+          {
+            "kind": "object",
+            "type": 20096,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "dollar": 300,
+        "awards": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 100
+          },
+          {
+            "kind": "object",
+            "type": 29801,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "dollar": 1000,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 20007,
+            "count": 10
+          },
+          {
+            "kind": "object",
+            "type": 29903,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "dollar": 3000,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 20010,
+            "count": 10
+          },
+          {
+            "kind": "object",
+            "type": 29966,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "dollar": 6000,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 20115,
+            "count": 1
+          },
+          {
+            "kind": "object",
+            "type": 29966,
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "round_days": 7
+  },
+  "single_pay": {
+    "enabled": true,
+    "window": {
+      "always": true
+    },
+    "refresh": "daily",
+    "grades": [
+      {
+        "dollar": 6,
+        "checkTimes": 10,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 20002,
+            "count": 10
+          },
+          {
+            "kind": "object",
+            "type": 20096,
+            "count": 1
+          },
+          {
+            "kind": "object",
+            "type": 25026,
+            "count": 1
+          },
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 30
+          }
+        ]
+      },
+      {
+        "dollar": 25,
+        "checkTimes": 10,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 20007,
+            "count": 5
+          },
+          {
+            "kind": "object",
+            "type": 20097,
+            "count": 1
+          },
+          {
+            "kind": "object",
+            "type": 29910,
+            "count": 1
+          },
+          {
+            "kind": "property",
+            "prop": "Coin",
+            "value": 50000
+          }
+        ]
+      },
+      {
+        "dollar": 30,
+        "checkTimes": 10,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 20010,
+            "count": 3
+          },
+          {
+            "kind": "object",
+            "type": 29901,
+            "count": 1
+          },
+          {
+            "kind": "object",
+            "type": 25000,
+            "count": 1
+          },
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 100
+          }
+        ]
+      },
+      {
+        "dollar": 50,
+        "checkTimes": 10,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 20002,
+            "count": 30
+          },
+          {
+            "kind": "object",
+            "type": 29910,
+            "count": 1
+          },
+          {
+            "kind": "object",
+            "type": 25029,
+            "count": 1
+          },
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 200
+          }
+        ]
+      },
+      {
+        "dollar": 68,
+        "checkTimes": 10,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 29901,
+            "count": 1
+          },
+          {
+            "kind": "object",
+            "type": 25026,
+            "count": 1
+          },
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 300
+          }
+        ]
+      },
+      {
+        "dollar": 98,
+        "checkTimes": 10,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 29903,
+            "count": 1
+          },
+          {
+            "kind": "object",
+            "type": 29965,
+            "count": 1
+          },
+          {
+            "kind": "object",
+            "type": 20114,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "dollar": 198,
+        "checkTimes": 10,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 29966,
+            "count": 1
+          },
+          {
+            "kind": "object",
+            "type": 29971,
+            "count": 1
+          },
+          {
+            "kind": "object",
+            "type": 20010,
+            "count": 30
+          }
+        ]
+      },
+      {
+        "dollar": 328,
+        "checkTimes": 10,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 20115,
+            "count": 1
+          },
+          {
+            "kind": "object",
+            "type": 29965,
+            "count": 2
+          },
+          {
+            "kind": "object",
+            "type": 29982,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "dollar": 648,
+        "checkTimes": 10,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 20115,
+            "count": 2
+          },
+          {
+            "kind": "object",
+            "type": 29966,
+            "count": 1
+          },
+          {
+            "kind": "object",
+            "type": 20117,
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "round_days": 7
+  },
+  "total_consume": {
+    "enabled": true,
+    "window": {
+      "always": true
+    },
+    "round_days": 7,
+    "grades": [
+      {
+        "consume": 500,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 20002,
+            "count": 20
+          },
+          {
+            "kind": "object",
+            "type": 29901,
+            "count": 1
+          }
+        ],
+        "payAwards": []
+      },
+      {
+        "consume": 2000,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 29803,
+            "count": 1
+          },
+          {
+            "kind": "object",
+            "type": 20114,
+            "count": 1
+          }
+        ],
+        "payAwards": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 100
+          }
+        ]
+      },
+      {
+        "consume": 5000,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 29905,
+            "count": 1
+          }
+        ],
+        "payAwards": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 200
+          }
+        ]
+      },
+      {
+        "consume": 10000,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 29966,
+            "count": 1
+          },
+          {
+            "kind": "object",
+            "type": 29971,
+            "count": 1
+          }
+        ],
+        "payAwards": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 500
+          }
+        ]
+      },
+      {
+        "consume": 30000,
+        "awards": [
+          {
+            "kind": "object",
+            "type": 20117,
+            "count": 1
+          },
+          {
+            "kind": "object",
+            "type": 29966,
+            "count": 2
+          }
+        ],
+        "payAwards": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 1500
+          }
+        ]
+      }
+    ]
+  },
+  "turntable": {
+    "enabled": true,
+    "window": {
+      "always": true
+    },
+    "id": 701,
+    "init_keys": 3,
+    "currency": 2,
+    "key_price": 50,
+    "currencies": [
+      {
+        "id": 1,
+        "count": 1
+      },
+      {
+        "id": 10,
+        "count": 2
+      }
+    ],
+    "cells": [
+      {
+        "award": {
+          "kind": "object",
+          "type": 20002,
+          "count": 3
+        },
+        "weight": 14
+      },
+      {
+        "award": {
+          "kind": "object",
+          "type": 25026,
+          "count": 1
+        },
+        "weight": 8
+      },
+      {
+        "award": {
+          "kind": "object",
+          "type": 20007,
+          "count": 3
+        },
+        "weight": 14
+      },
+      {
+        "award": {
+          "kind": "object",
+          "type": 29903,
+          "count": 1
+        },
+        "weight": 6
+      },
+      {
+        "award": {
+          "kind": "object",
+          "type": 20010,
+          "count": 3
+        },
+        "weight": 14
+      },
+      {
+        "award": {
+          "kind": "object",
+          "type": 29913,
+          "count": 1
+        },
+        "weight": 6
+      },
+      {
+        "award": {
+          "kind": "property",
+          "prop": "Dollar",
+          "value": 200
+        },
+        "weight": 3
+      },
+      {
+        "award": {
+          "kind": "object",
+          "type": 20002,
+          "count": 10
+        },
+        "weight": 12
+      },
+      {
+        "award": {
+          "kind": "object",
+          "type": 25000,
+          "count": 1
+        },
+        "weight": 5
+      },
+      {
+        "award": {
+          "kind": "object",
+          "type": 20007,
+          "count": 10
+        },
+        "weight": 10
+      },
+      {
+        "award": {
+          "kind": "object",
+          "type": 29913,
+          "count": 1
+        },
+        "weight": 5
+      },
+      {
+        "award": {
+          "kind": "object",
+          "type": 20010,
+          "count": 5
+        },
+        "weight": 10
+      },
+      {
+        "award": {
+          "kind": "object",
+          "type": 29966,
+          "count": 1
+        },
+        "weight": 2
+      },
+      {
+        "award": {
+          "kind": "object",
+          "type": 20115,
+          "count": 1
+        },
+        "weight": 1
+      }
+    ],
+    "round_days": 7
+  },
+  "secret_shop": {
+    "enabled": true,
+    "window": {
+      "always": true
+    },
+    "rounds": [
+      { "start": "10:00", "end": "14:00", "slots": 8 },
+      { "start": "16:00", "end": "20:00", "slots": 8 },
+      { "start": "21:00", "end": "23:30", "slots": 8 }
+    ],
+    "free_slots": 0,
+    "discounts": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "pool": [
+      {
+        "type": 20002,
+        "count": 10,
+        "base_price": 200,
+        "group": "资源"
+      },
+      {
+        "type": 20002,
+        "count": 50,
+        "base_price": 900,
+        "group": "资源"
+      },
+      {
+        "type": 20007,
+        "count": 10,
+        "base_price": 500,
+        "group": "资源"
+      },
+      {
+        "type": 20007,
+        "count": 30,
+        "base_price": 1400,
+        "group": "资源"
+      },
+      {
+        "type": 20010,
+        "count": 5,
+        "base_price": 800,
+        "group": "资源"
+      },
+      {
+        "type": 21000,
+        "count": 20,
+        "base_price": 300,
+        "group": "资源"
+      },
+      {
+        "type": 21005,
+        "count": 20,
+        "base_price": 300,
+        "group": "资源"
+      },
+      {
+        "type": 20002,
+        "count": 100,
+        "base_price": 1700,
+        "group": "资源"
+      },
+      {
+        "type": 21076,
+        "count": 1,
+        "base_price": 800,
+        "group": "军旗"
+      },
+      {
+        "type": 21077,
+        "count": 1,
+        "base_price": 800,
+        "group": "军旗"
+      },
+      {
+        "type": 21078,
+        "count": 1,
+        "base_price": 800,
+        "group": "军旗"
+      },
+      {
+        "type": 21079,
+        "count": 1,
+        "base_price": 800,
+        "group": "军旗"
+      },
+      {
+        "type": 21080,
+        "count": 1,
+        "base_price": 800,
+        "group": "军旗"
+      },
+      {
+        "type": 21081,
+        "count": 1,
+        "base_price": 800,
+        "group": "军旗"
+      },
+      {
+        "type": 21082,
+        "count": 1,
+        "base_price": 800,
+        "group": "军旗"
+      },
+      {
+        "type": 21040,
+        "count": 30,
+        "base_price": 600,
+        "group": "军旗"
+      },
+      {
+        "type": 29801,
+        "count": 1,
+        "base_price": 300,
+        "group": "随机武将卡"
+      },
+      {
+        "type": 29802,
+        "count": 1,
+        "base_price": 500,
+        "group": "随机武将卡"
+      },
+      {
+        "type": 29803,
+        "count": 1,
+        "base_price": 800,
+        "group": "随机武将卡"
+      },
+      {
+        "type": 29804,
+        "count": 1,
+        "base_price": 1200,
+        "group": "随机武将卡"
+      },
+      {
+        "type": 29805,
+        "count": 1,
+        "base_price": 1800,
+        "group": "随机武将卡"
+      },
+      {
+        "type": 20096,
+        "count": 1,
+        "base_price": 400,
+        "group": "随机武将卡"
+      },
+      {
+        "type": 20097,
+        "count": 1,
+        "base_price": 400,
+        "group": "随机武将卡"
+      },
+      {
+        "type": 20101,
+        "count": 1,
+        "base_price": 400,
+        "group": "随机武将卡"
+      },
+      {
+        "type": 20109,
+        "count": 1,
+        "base_price": 400,
+        "group": "武将卡"
+      },
+      {
+        "type": 20110,
+        "count": 1,
+        "base_price": 400,
+        "group": "武将卡"
+      },
+      {
+        "type": 20111,
+        "count": 1,
+        "base_price": 400,
+        "group": "武将卡"
+      },
+      {
+        "type": 20112,
+        "count": 1,
+        "base_price": 400,
+        "group": "武将卡"
+      },
+      {
+        "type": 20113,
+        "count": 1,
+        "base_price": 400,
+        "group": "武将卡"
+      },
+      {
+        "type": 29939,
+        "count": 1,
+        "base_price": 1000,
+        "group": "武将卡"
+      },
+      {
+        "type": 29940,
+        "count": 1,
+        "base_price": 1000,
+        "group": "武将卡"
+      },
+      {
+        "type": 29941,
+        "count": 1,
+        "base_price": 1000,
+        "group": "武将卡"
+      },
+      {
+        "type": 25000,
+        "count": 1,
+        "base_price": 500,
+        "group": "定缘卡"
+      },
+      {
+        "type": 25003,
+        "count": 1,
+        "base_price": 500,
+        "group": "定缘卡"
+      },
+      {
+        "type": 25006,
+        "count": 1,
+        "base_price": 500,
+        "group": "定缘卡"
+      },
+      {
+        "type": 25009,
+        "count": 1,
+        "base_price": 500,
+        "group": "定缘卡"
+      },
+      {
+        "type": 25026,
+        "count": 1,
+        "base_price": 500,
+        "group": "定缘卡"
+      },
+      {
+        "type": 25029,
+        "count": 1,
+        "base_price": 500,
+        "group": "定缘卡"
+      },
+      {
+        "type": 25032,
+        "count": 1,
+        "base_price": 500,
+        "group": "定缘卡"
+      },
+      {
+        "type": 25035,
+        "count": 1,
+        "base_price": 500,
+        "group": "定缘卡"
+      }
+    ]
+  },
+  "activity_shop": {
+    "enabled": true,
+    "window": {
+      "always": true
+    },
+    "grades": [
+      {
+        "grade": 1,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "兑换资源",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 200
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 20002,
+            "count": 20
+          }
+        ]
+      },
+      {
+        "grade": 2,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "兑换资源",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 450
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 20002,
+            "count": 50
+          }
+        ]
+      },
+      {
+        "grade": 3,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "兑换资源",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 500
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 20007,
+            "count": 10
+          }
+        ]
+      },
+      {
+        "grade": 4,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "兑换资源",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 1400
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 20007,
+            "count": 30
+          }
+        ]
+      },
+      {
+        "grade": 5,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "兑换资源",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 800
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 20010,
+            "count": 5
+          }
+        ]
+      },
+      {
+        "grade": 6,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "兑换资源",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 300
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 21000,
+            "count": 20
+          }
+        ]
+      },
+      {
+        "grade": 7,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "兑换资源",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 300
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 21005,
+            "count": 20
+          }
+        ]
+      },
+      {
+        "grade": 8,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "兑换资源",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 350
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 21010,
+            "count": 20
+          }
+        ]
+      },
+      {
+        "grade": 9,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "兑换资源",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 350
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 21015,
+            "count": 20
+          }
+        ]
+      },
+      {
+        "grade": 10,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "装备卡",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 150
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 29910,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 11,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "装备卡",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 200
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 29913,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 12,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "装备卡",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 300
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 29916,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 13,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "装备卡",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 400
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 29919,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 14,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "装备卡",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 500
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 29922,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 15,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "装备卡",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 700
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 29925,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 16,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "装备卡",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 900
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 29928,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 17,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "装备卡",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 1200
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 29931,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 18,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "装备卡",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 1600
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 29934,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 19,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "随机神将卡",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 200
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 29801,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 20,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "随机神将卡",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 350
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 29802,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 21,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "随机神将卡",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 600
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 29803,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 22,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "随机神将卡",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 900
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 29804,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 23,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "随机神将卡",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 1300
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 29805,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 24,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "随机神将卡",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 300
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 20096,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 25,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "随机神将卡",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 300
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 20097,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 26,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "随机神将卡",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 300
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 20101,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 27,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "随机神将卡",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 300
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 20113,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 28,
+        "checkTimes": 5,
+        "isLimit": true,
+        "groupName": "超稀有品质",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 5000
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 20116,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 29,
+        "checkTimes": 5,
+        "isLimit": true,
+        "groupName": "超稀有品质",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 5000
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 20118,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 30,
+        "checkTimes": 5,
+        "isLimit": true,
+        "groupName": "超稀有品质",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 3000
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 29966,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 31,
+        "checkTimes": 5,
+        "isLimit": true,
+        "groupName": "超稀有品质",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 4500
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 29967,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 32,
+        "checkTimes": 5,
+        "isLimit": true,
+        "groupName": "超稀有品质",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 4000
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 29995,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 33,
+        "checkTimes": 5,
+        "isLimit": true,
+        "groupName": "超稀有品质",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 2500
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 29977,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 34,
+        "checkTimes": 5,
+        "isLimit": true,
+        "groupName": "超稀有品质",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 2500
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 29978,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 35,
+        "checkTimes": 5,
+        "isLimit": true,
+        "groupName": "超稀有品质",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 2500
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 29979,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 36,
+        "checkTimes": 5,
+        "isLimit": true,
+        "groupName": "超稀有品质",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 2000
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 29982,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 37,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "兑换军旗物资",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 800
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 21076,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 38,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "兑换军旗物资",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 800
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 21077,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 39,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "兑换军旗物资",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 800
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 21078,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 40,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "兑换军旗物资",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 800
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 21079,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 41,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "兑换军旗物资",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 800
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 21080,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 42,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "兑换军旗物资",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 800
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 21081,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 43,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "兑换军旗物资",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 800
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 21082,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "grade": 44,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "兑换军旗物资",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 600
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 21040,
+            "count": 30
+          }
+        ]
+      },
+      {
+        "grade": 45,
+        "checkTimes": 99,
+        "isLimit": false,
+        "groupName": "兑换军旗物资",
+        "needItems": [
+          {
+            "kind": "property",
+            "prop": "Dollar",
+            "value": 600
+          }
+        ],
+        "resultAward": [
+          {
+            "kind": "object",
+            "type": 21041,
+            "count": 30
+          }
+        ]
+      }
+    ],
+    "round_days": 7
+  }
+}

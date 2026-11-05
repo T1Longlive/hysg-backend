@@ -1,0 +1,604 @@
+{
+  "1": {
+    "BuyLevelTimes": 0.0,
+    "BuyEpTimes": 1.0,
+    "ReapLevelTimes": 10.0,
+    "PermanentShop": 0.0,
+    "Lv": 0.0,
+    "EquipEnCritCount": 2.0,
+    "Description": "累计购买0元宝可升至VIP0&每天可购买体力1次&每天可购买铜钱3次&每天可重置关卡1次&每天可重置合成1次&每天可购买竞技场2次&装备强化开放2倍暴击&购买铜钱开放2倍暴击&每天登陆领取扫荡令10个",
+    "CoinTimes": 2.0,
+    "Price": 0.0,
+    "FastLvUp": 0.0,
+    "Award": "",
+    "ID": 1.0,
+    "TherionTimes": 0.0,
+    "SyncAgain": 1.0,
+    "FastWeaponUpgrade": 0.0,
+    "BuyCoinTimes": 6.0,
+    "ArenaTimes": 5.0,
+    "JunXuTimes": 0.0,
+    "ArenaBuyTimes": 2.0,
+    "BuyChestTimes": 2.0,
+    "BuyWorldBossTimes": 0.0,
+    "BuyCoinIslandTimes": 0.0,
+    "AttackCoinIslandTimes": 2.0,
+    "HeroStageTimes": 3.0,
+    "ReRegist": 0.0
+  },
+  "2": {
+    "BuyLevelTimes": 1.0,
+    "BuyEpTimes": 2.0,
+    "ReapLevelTimes": 15.0,
+    "PermanentShop": 0.0,
+    "Lv": 1.0,
+    "EquipEnCritCount": 2.0,
+    "Description": "累计购买100元宝可升至VIP1&每天可购买体力2次&每天可购买铜钱8次&每天可购买竞技场3次&每天可重置关卡1次&每天可重置合成2次&每天登陆领取扫荡令15个&包含VIP0的所有权利",
+    "CoinTimes": 2.0,
+    "Price": 100.0,
+    "FastLvUp": 0.0,
+    "Award": {
+      "1": {
+        "ClassName": "PropertyAward",
+        "PropertyName": "Coin",
+        "Value": 10000.0
+      },
+      "2": {
+        "ClassName": "ObjectAward",
+        "Type": 20005.0,
+        "Count": 10.0
+      }
+    },
+    "ID": 2.0,
+    "TherionTimes": 0.0,
+    "SyncAgain": 2.0,
+    "FastWeaponUpgrade": 0.0,
+    "BuyCoinTimes": 8.0,
+    "ArenaTimes": 5.0,
+    "JunXuTimes": 0.0,
+    "ArenaBuyTimes": 3.0,
+    "BuyChestTimes": 2.0,
+    "BuyWorldBossTimes": 0.0,
+    "BuyCoinIslandTimes": 0.0,
+    "AttackCoinIslandTimes": 2.0,
+    "HeroStageTimes": 3.0,
+    "ReRegist": 0.0
+  },
+  "3": {
+    "BuyLevelTimes": 1.0,
+    "BuyEpTimes": 3.0,
+    "ReapLevelTimes": 20.0,
+    "PermanentShop": 0.0,
+    "Lv": 2.0,
+    "EquipEnCritCount": 2.0,
+    "Description": "累计购买300元宝可升至VIP2&每天可购买体力3次&每天可购买铜钱10次&每天可购买竞技场4次&每天可重置合成3次&每天可刷新竞技场商店1次&每天登陆领取扫荡令20个&包含VIP1的所有权利",
+    "CoinTimes": 2.0,
+    "Price": 300.0,
+    "FastLvUp": 0.0,
+    "Award": {
+      "1": {
+        "ClassName": "PropertyAward",
+        "PropertyName": "Coin",
+        "Value": 20000.0
+      },
+      "2": {
+        "ClassName": "PropertyAward",
+        "PropertyName": "Ep",
+        "Value": 100.0
+      }
+    },
+    "ID": 3.0,
+    "TherionTimes": 0.0,
+    "SyncAgain": 3.0,
+    "FastWeaponUpgrade": 0.0,
+    "BuyCoinTimes": 10.0,
+    "ArenaTimes": 5.0,
+    "JunXuTimes": 1.0,
+    "ArenaBuyTimes": 4.0,
+    "BuyChestTimes": 2.0,
+    "BuyWorldBossTimes": 0.0,
+    "BuyCoinIslandTimes": 0.0,
+    "AttackCoinIslandTimes": 2.0,
+    "HeroStageTimes": 3.0,
+    "ReRegist": 0.0
+  },
+  "4": {
+    "BuyLevelTimes": 1.0,
+    "BuyEpTimes": 4.0,
+    "ReapLevelTimes": 25.0,
+    "PermanentShop": 0.0,
+    "Lv": 3.0,
+    "EquipEnCritCount": 3.0,
+    "Description": "累计购买500元宝可升至VIP3&每天可购买体力4次&每天可购买铜钱16次&每天可购买竞技场5次&装备强化开放3倍暴击&每天可重置合成4次&每天登陆领取扫荡令25个&包含VIP2的所有权利",
+    "CoinTimes": 2.0,
+    "Price": 500.0,
+    "FastLvUp": 0.0,
+    "Award": {
+      "1": {
+        "ClassName": "PropertyAward",
+        "PropertyName": "Coin",
+        "Value": 30000.0
+      },
+      "2": {
+        "ClassName": "PropertyAward",
+        "PropertyName": "Vigour",
+        "Value": 100.0
+      }
+    },
+    "ID": 4.0,
+    "TherionTimes": 0.0,
+    "SyncAgain": 4.0,
+    "FastWeaponUpgrade": 1.0,
+    "BuyCoinTimes": 16.0,
+    "ArenaTimes": 5.0,
+    "JunXuTimes": 1.0,
+    "ArenaBuyTimes": 5.0,
+    "BuyChestTimes": 2.0,
+    "BuyWorldBossTimes": 0.0,
+    "BuyCoinIslandTimes": 1.0,
+    "AttackCoinIslandTimes": 2.0,
+    "HeroStageTimes": 3.0,
+    "ReRegist": 0.0
+  },
+  "5": {
+    "BuyLevelTimes": 1.0,
+    "BuyEpTimes": 5.0,
+    "ReapLevelTimes": 30.0,
+    "PermanentShop": 0.0,
+    "Lv": 4.0,
+    "EquipEnCritCount": 3.0,
+    "Description": "累计购买1000元宝可升至VIP4&每天可购买体力5次&每天可购买铜钱20次&每天可购买竞技场7次&每天可重置合成5次&每天登陆领取扫荡令30个&包含VIP3的所有权利",
+    "CoinTimes": 2.0,
+    "Price": 1000.0,
+    "FastLvUp": 0.0,
+    "Award": {
+      "1": {
+        "ClassName": "PropertyAward",
+        "PropertyName": "Coin",
+        "Value": 40000.0
+      },
+      "2": {
+        "ClassName": "ObjectAward",
+        "Type": 20006.0,
+        "Count": 5.0
+      }
+    },
+    "ID": 5.0,
+    "TherionTimes": 0.0,
+    "SyncAgain": 5.0,
+    "FastWeaponUpgrade": 1.0,
+    "BuyCoinTimes": 20.0,
+    "ArenaTimes": 5.0,
+    "JunXuTimes": 1.0,
+    "ArenaBuyTimes": 7.0,
+    "BuyChestTimes": 4.0,
+    "BuyWorldBossTimes": 0.0,
+    "BuyCoinIslandTimes": 1.0,
+    "AttackCoinIslandTimes": 2.0,
+    "HeroStageTimes": 3.0,
+    "ReRegist": 0.0
+  },
+  "6": {
+    "BuyLevelTimes": 2.0,
+    "BuyEpTimes": 6.0,
+    "ReapLevelTimes": 35.0,
+    "PermanentShop": 0.0,
+    "Lv": 5.0,
+    "EquipEnCritCount": 3.0,
+    "Description": "累计购买2000元宝可升至VIP5&每天可购买体力6次&每天可购买铜钱26次&每天可购买竞技场8次&每天可重置关卡2次&铜币购买开放3倍暴击&每天可重置合成7次&开启一键升级，提升武将等级&开启元宝补签，弥补未上线的遗憾&每天登陆领取扫荡令35个&包含VIP4的所有权利",
+    "CoinTimes": 3.0,
+    "Price": 2000.0,
+    "FastLvUp": 1.0,
+    "Award": {
+      "1": {
+        "ClassName": "PropertyAward",
+        "PropertyName": "Coin",
+        "Value": 50000.0
+      },
+      "2": {
+        "ClassName": "ObjectAward",
+        "Type": 20004.0,
+        "Count": 300.0
+      },
+      "3": {
+        "ClassName": "PropertyAward",
+        "PropertyName": "Ep",
+        "Value": 250.0
+      }
+    },
+    "ID": 6.0,
+    "TherionTimes": 0.0,
+    "SyncAgain": 7.0,
+    "FastWeaponUpgrade": 1.0,
+    "BuyCoinTimes": 26.0,
+    "ArenaTimes": 5.0,
+    "JunXuTimes": 1.0,
+    "ArenaBuyTimes": 8.0,
+    "BuyChestTimes": 6.0,
+    "BuyWorldBossTimes": 5.0,
+    "BuyCoinIslandTimes": 1.0,
+    "AttackCoinIslandTimes": 2.0,
+    "HeroStageTimes": 4.0,
+    "ReRegist": 1.0
+  },
+  "7": {
+    "BuyLevelTimes": 2.0,
+    "BuyEpTimes": 7.0,
+    "ReapLevelTimes": 40.0,
+    "PermanentShop": 0.0,
+    "Lv": 6.0,
+    "EquipEnCritCount": 3.0,
+    "Description": "累计购买3000元宝可升至VIP6&每天可购买体力7次&每天可购买铜钱30次&每天可购买竞技场9次&每天可重置合成9次&每天可刷新竞技场商店5次&每天登陆领取扫荡令40个&包含VIP5的所有权利",
+    "CoinTimes": 3.0,
+    "Price": 3000.0,
+    "FastLvUp": 1.0,
+    "Award": {
+      "1": {
+        "ClassName": "PropertyAward",
+        "PropertyName": "Coin",
+        "Value": 60000.0
+      },
+      "2": {
+        "ClassName": "PropertyAward",
+        "PropertyName": "Vigour",
+        "Value": 100.0
+      }
+    },
+    "ID": 7.0,
+    "TherionTimes": 0.0,
+    "SyncAgain": 9.0,
+    "FastWeaponUpgrade": 1.0,
+    "BuyCoinTimes": 30.0,
+    "ArenaTimes": 5.0,
+    "JunXuTimes": 5.0,
+    "ArenaBuyTimes": 9.0,
+    "BuyChestTimes": 8.0,
+    "BuyWorldBossTimes": 5.0,
+    "BuyCoinIslandTimes": 1.0,
+    "AttackCoinIslandTimes": 2.0,
+    "HeroStageTimes": 4.0,
+    "ReRegist": 1.0
+  },
+  "8": {
+    "BuyLevelTimes": 2.0,
+    "BuyEpTimes": 8.0,
+    "ReapLevelTimes": 45.0,
+    "PermanentShop": 0.0,
+    "Lv": 7.0,
+    "EquipEnCritCount": 3.0,
+    "Description": "累计购买5000元宝可升至VIP7&每天可购买体力8次&每天可购买铜钱40次&每天可购买竞技场10次&每天可重置合成12次&每天登陆领取扫荡令45个&包含VIP6的所有权利",
+    "CoinTimes": 3.0,
+    "Price": 5000.0,
+    "FastLvUp": 1.0,
+    "Award": {
+      "1": {
+        "ClassName": "PropertyAward",
+        "PropertyName": "Coin",
+        "Value": 70000.0
+      },
+      "2": {
+        "ClassName": "ObjectAward",
+        "Type": 20006.0,
+        "Count": 20.0
+      }
+    },
+    "ID": 8.0,
+    "TherionTimes": 0.0,
+    "SyncAgain": 12.0,
+    "FastWeaponUpgrade": 1.0,
+    "BuyCoinTimes": 40.0,
+    "ArenaTimes": 5.0,
+    "JunXuTimes": 5.0,
+    "ArenaBuyTimes": 10.0,
+    "BuyChestTimes": 10.0,
+    "BuyWorldBossTimes": 5.0,
+    "BuyCoinIslandTimes": 1.0,
+    "AttackCoinIslandTimes": 2.0,
+    "HeroStageTimes": 4.0,
+    "ReRegist": 1.0
+  },
+  "9": {
+    "BuyLevelTimes": 2.0,
+    "BuyEpTimes": 9.0,
+    "ReapLevelTimes": 50.0,
+    "PermanentShop": 1.0,
+    "Lv": 8.0,
+    "EquipEnCritCount": 4.0,
+    "Description": "累计购买6000元宝可升至VIP8&每天可购买体力9次&每天可购买铜钱50次&每天可购买竞技场12次&装备强化开放4倍暴击&每天可重置合成15次&每天登陆领取扫荡令50个&包含VIP7的所有权利",
+    "CoinTimes": 3.0,
+    "Price": 6000.0,
+    "FastLvUp": 1.0,
+    "Award": {
+      "1": {
+        "ClassName": "PropertyAward",
+        "PropertyName": "Coin",
+        "Value": 80000.0
+      },
+      "2": {
+        "ClassName": "ObjectAward",
+        "Type": 20006.0,
+        "Count": 20.0
+      }
+    },
+    "ID": 9.0,
+    "TherionTimes": 0.0,
+    "SyncAgain": 15.0,
+    "FastWeaponUpgrade": 1.0,
+    "BuyCoinTimes": 50.0,
+    "ArenaTimes": 5.0,
+    "JunXuTimes": 5.0,
+    "ArenaBuyTimes": 12.0,
+    "BuyChestTimes": 15.0,
+    "BuyWorldBossTimes": 5.0,
+    "BuyCoinIslandTimes": 2.0,
+    "AttackCoinIslandTimes": 4.0,
+    "HeroStageTimes": 4.0,
+    "ReRegist": 1.0
+  },
+  "10": {
+    "BuyLevelTimes": 2.0,
+    "BuyEpTimes": 10.0,
+    "ReapLevelTimes": 55.0,
+    "PermanentShop": 1.0,
+    "Lv": 9.0,
+    "EquipEnCritCount": 4.0,
+    "Description": "累计购买8000元宝可升至VIP9&每天可购买体力10次&每天可购买铜钱60次&每天可购买竞技场15次&每天可重置合成18次&每天登陆领取扫荡令55个&包含VIP8的所有权利",
+    "CoinTimes": 3.0,
+    "Price": 8000.0,
+    "FastLvUp": 1.0,
+    "Award": {
+      "1": {
+        "ClassName": "PropertyAward",
+        "PropertyName": "Coin",
+        "Value": 90000.0
+      },
+      "2": {
+        "ClassName": "ObjectAward",
+        "Type": 20006.0,
+        "Count": 30.0
+      }
+    },
+    "ID": 10.0,
+    "TherionTimes": 0.0,
+    "SyncAgain": 18.0,
+    "FastWeaponUpgrade": 1.0,
+    "BuyCoinTimes": 60.0,
+    "ArenaTimes": 5.0,
+    "JunXuTimes": 5.0,
+    "ArenaBuyTimes": 15.0,
+    "BuyChestTimes": 20.0,
+    "BuyWorldBossTimes": 5.0,
+    "BuyCoinIslandTimes": 2.0,
+    "AttackCoinIslandTimes": 4.0,
+    "HeroStageTimes": 4.0,
+    "ReRegist": 1.0
+  },
+  "11": {
+    "BuyLevelTimes": 3.0,
+    "BuyEpTimes": 11.0,
+    "ReapLevelTimes": 60.0,
+    "PermanentShop": 1.0,
+    "Lv": 10.0,
+    "EquipEnCritCount": 4.0,
+    "Description": "累计购买10000元宝可升至VIP10&每天可购买体力11次&每天可购买铜钱70次&每天可购买竞技场17次&每天可重置关卡3次&铜币购买开放4倍暴击&每天可重置合成22次&每天登陆领取扫荡令60个&包含VIP9的所有权利",
+    "CoinTimes": 4.0,
+    "Price": 10000.0,
+    "FastLvUp": 1.0,
+    "Award": {
+      "1": {
+        "ClassName": "PropertyAward",
+        "PropertyName": "Coin",
+        "Value": 100000.0
+      },
+      "2": {
+        "ClassName": "ObjectAward",
+        "Type": 20006.0,
+        "Count": 40.0
+      }
+    },
+    "ID": 11.0,
+    "TherionTimes": 0.0,
+    "SyncAgain": 22.0,
+    "FastWeaponUpgrade": 1.0,
+    "BuyCoinTimes": 70.0,
+    "ArenaTimes": 5.0,
+    "JunXuTimes": 5.0,
+    "ArenaBuyTimes": 17.0,
+    "BuyChestTimes": 30.0,
+    "BuyWorldBossTimes": 5.0,
+    "BuyCoinIslandTimes": 2.0,
+    "AttackCoinIslandTimes": 4.0,
+    "HeroStageTimes": 5.0,
+    "ReRegist": 1.0
+  },
+  "12": {
+    "BuyLevelTimes": 4.0,
+    "BuyEpTimes": 12.0,
+    "ReapLevelTimes": 65.0,
+    "PermanentShop": 1.0,
+    "Lv": 11.0,
+    "EquipEnCritCount": 4.0,
+    "Description": "累计购买15000元宝可升至VIP11&每天可购买体力12次&每天可购买铜钱80次&每天可购买竞技场20次&每天可重置关卡4次&每天可重置合成26次&每天可刷新竞技场商店10次&每天登陆领取扫荡令65个&包含VIP10的所有权利",
+    "CoinTimes": 4.0,
+    "Price": 15000.0,
+    "FastLvUp": 1.0,
+    "Award": {
+      "1": {
+        "ClassName": "PropertyAward",
+        "PropertyName": "Coin",
+        "Value": 120000.0
+      },
+      "2": {
+        "ClassName": "ObjectAward",
+        "Type": 20006.0,
+        "Count": 50.0
+      }
+    },
+    "ID": 12.0,
+    "TherionTimes": 0.0,
+    "SyncAgain": 26.0,
+    "FastWeaponUpgrade": 1.0,
+    "BuyCoinTimes": 80.0,
+    "ArenaTimes": 5.0,
+    "JunXuTimes": 10.0,
+    "ArenaBuyTimes": 20.0,
+    "BuyChestTimes": 40.0,
+    "BuyWorldBossTimes": 5.0,
+    "BuyCoinIslandTimes": 2.0,
+    "AttackCoinIslandTimes": 4.0,
+    "HeroStageTimes": 5.0,
+    "ReRegist": 1.0
+  },
+  "13": {
+    "BuyLevelTimes": 5.0,
+    "BuyEpTimes": 13.0,
+    "ReapLevelTimes": 70.0,
+    "PermanentShop": 1.0,
+    "Lv": 12.0,
+    "EquipEnCritCount": 5.0,
+    "Description": "累计购买30000元宝可升至VIP12&每天可购买体力13次&每天可购买铜钱90次&每天可购买竞技场25次&每天可重置关卡5次&装备强化开放5倍暴击&每天可重置合成30次&每天登陆领取扫荡令70个&包含VIP11的所有权利",
+    "CoinTimes": 4.0,
+    "Price": 30000.0,
+    "FastLvUp": 1.0,
+    "Award": {
+      "1": {
+        "ClassName": "PropertyAward",
+        "PropertyName": "Coin",
+        "Value": 150000.0
+      },
+      "2": {
+        "ClassName": "ObjectAward",
+        "Type": 20007.0,
+        "Count": 10.0
+      }
+    },
+    "ID": 13.0,
+    "TherionTimes": 0.0,
+    "SyncAgain": 30.0,
+    "FastWeaponUpgrade": 1.0,
+    "BuyCoinTimes": 90.0,
+    "ArenaTimes": 5.0,
+    "JunXuTimes": 10.0,
+    "ArenaBuyTimes": 25.0,
+    "BuyChestTimes": 50.0,
+    "BuyWorldBossTimes": 5.0,
+    "BuyCoinIslandTimes": 2.0,
+    "AttackCoinIslandTimes": 4.0,
+    "HeroStageTimes": 5.0,
+    "ReRegist": 1.0
+  },
+  "14": {
+    "BuyLevelTimes": 6.0,
+    "BuyEpTimes": 14.0,
+    "ReapLevelTimes": 75.0,
+    "PermanentShop": 1.0,
+    "Lv": 13.0,
+    "EquipEnCritCount": 5.0,
+    "Description": "累计购买60000元宝可升至VIP13&每天可购买体力14次&每天可购买铜钱100次&每天可重置关卡6次&每天可重置合成35次&每天登陆领取扫荡令75个&包含VIP12的所有权利",
+    "CoinTimes": 4.0,
+    "Price": 60000.0,
+    "FastLvUp": 1.0,
+    "Award": {
+      "1": {
+        "ClassName": "PropertyAward",
+        "PropertyName": "Coin",
+        "Value": 200000.0
+      },
+      "2": {
+        "ClassName": "ObjectAward",
+        "Type": 20007.0,
+        "Count": 10.0
+      }
+    },
+    "ID": 14.0,
+    "TherionTimes": 0.0,
+    "SyncAgain": 35.0,
+    "FastWeaponUpgrade": 1.0,
+    "BuyCoinTimes": 100.0,
+    "ArenaTimes": 5.0,
+    "JunXuTimes": 10.0,
+    "ArenaBuyTimes": 25.0,
+    "BuyChestTimes": 70.0,
+    "BuyWorldBossTimes": 5.0,
+    "BuyCoinIslandTimes": 3.0,
+    "AttackCoinIslandTimes": 4.0,
+    "HeroStageTimes": 5.0,
+    "ReRegist": 1.0
+  },
+  "15": {
+    "BuyLevelTimes": 7.0,
+    "BuyEpTimes": 15.0,
+    "ReapLevelTimes": 80.0,
+    "PermanentShop": 1.0,
+    "Lv": 14.0,
+    "EquipEnCritCount": 5.0,
+    "Description": "累计购买100000元宝可升至VIP14&每天可购买体力15次&每天可购买铜钱110次&每天可重置关卡7次&每天可重置合成40次&每天登陆领取扫荡令80个&包含VIP13的所有权利",
+    "CoinTimes": 4.0,
+    "Price": 100000.0,
+    "FastLvUp": 1.0,
+    "Award": {
+      "1": {
+        "ClassName": "PropertyAward",
+        "PropertyName": "Coin",
+        "Value": 300000.0
+      },
+      "2": {
+        "ClassName": "ObjectAward",
+        "Type": 20007.0,
+        "Count": 20.0
+      }
+    },
+    "ID": 15.0,
+    "TherionTimes": 0.0,
+    "SyncAgain": 40.0,
+    "FastWeaponUpgrade": 1.0,
+    "BuyCoinTimes": 110.0,
+    "ArenaTimes": 5.0,
+    "JunXuTimes": 10.0,
+    "ArenaBuyTimes": 25.0,
+    "BuyChestTimes": 90.0,
+    "BuyWorldBossTimes": 5.0,
+    "BuyCoinIslandTimes": 3.0,
+    "AttackCoinIslandTimes": 4.0,
+    "HeroStageTimes": 5.0,
+    "ReRegist": 1.0
+  },
+  "16": {
+    "BuyLevelTimes": 8.0,
+    "BuyEpTimes": 16.0,
+    "ReapLevelTimes": 85.0,
+    "PermanentShop": 1.0,
+    "Lv": 15.0,
+    "EquipEnCritCount": 5.0,
+    "Description": "累计购买150000元宝可升至VIP15&每天可购买体力16次&每天可购买铜钱120次&每天可重置关卡8次&每天可重置合成45次&每天登陆领取扫荡令85个&包含VIP14的所有权利",
+    "CoinTimes": 4.0,
+    "Price": 150000.0,
+    "FastLvUp": 1.0,
+    "Award": {
+      "1": {
+        "ClassName": "PropertyAward",
+        "PropertyName": "Coin",
+        "Value": 400000.0
+      },
+      "2": {
+        "ClassName": "ObjectAward",
+        "Type": 20007.0,
+        "Count": 20.0
+      }
+    },
+    "ID": 16.0,
+    "TherionTimes": 0.0,
+    "SyncAgain": 45.0,
+    "FastWeaponUpgrade": 1.0,
+    "BuyCoinTimes": 120.0,
+    "ArenaTimes": 5.0,
+    "JunXuTimes": 10.0,
+    "ArenaBuyTimes": 25.0,
+    "BuyChestTimes": 120.0,
+    "BuyWorldBossTimes": 5.0,
+    "BuyCoinIslandTimes": 3.0,
+    "AttackCoinIslandTimes": 4.0,
+    "HeroStageTimes": 5.0,
+    "ReRegist": 1.0
+  }
+}

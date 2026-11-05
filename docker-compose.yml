@@ -1,0 +1,45 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    # CI 构建时用 commit sha 作为 tag（服务器从 ACR 拉取同一 tag）；
+    # 不传 IMAGE_TAG 时用 :latest（CI 每次也会更新 latest，手工部署直接可用）
+    image: crpi-jzqyelh9p5zb0dmu.cn-chengdu.personal.cr.aliyuncs.com/t1longlive/hysg-server:${IMAGE_TAG:-latest}
+    container_name: hysg-server
+    restart: unless-stopped
+    # 容器内存上限：失控时只杀本容器，不波及 pm 与宿主
+    mem_limit: 384m
+    memswap_limit: 768m
+    ports:
+      - "2724:2724"   # 游戏 TCP 协议
+      - "8000:8000"   # HTTP：serverlist / 公告 / 邮件页 / GM
+    environment:
+      # 客户端连接用的对外 IP：局域网填宿主机 IP，公网填 EIP/公网 IP
+      SGHY_PUBLIC_IP: ${SGHY_PUBLIC_IP:-192.168.1.5}
+      SGHY_SERVER_NAME: ${SGHY_SERVER_NAME:-本地测试服}
+      # 公网部署务必设置：/api/gm 与 /mail 管理接口的访问令牌（空=不鉴权）
+      SGHY_GM_TOKEN: ${SGHY_GM_TOKEN:-}
+      TZ: Asia/Shanghai
+      SGHY_CONFIG_DIR: /config/rt_all
+      SGHY_DB_PATH: /data/sghy.db
+      SGHY_LOG_DIR: /logs
+      SGHY_PLAYER_DATA: /seed/player_data.json
+    volumes:
+      - ./env/_work/rt_all:/config/rt_all:ro
+      - ./server/sghy_server/config:/app/sghy_server/config
+      # SQLite WAL 不能跑在绑定挂载上，存档放 Docker 原生卷；
+      # 宿主机现有存档只读挂到 /seed-db，首次启动自动导入一次。
+      - hysg-data:/data
+      - ./server/data:/seed-db:ro
+      - ./server/logs:/logs
+    healthcheck:
+      test: ["CMD", "python", "-c", "import socket; s=socket.create_connection(('127.0.0.1', 2724), 3); s.close()"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+volumes:
+  hysg-data:
+    name: hysg-server-data

@@ -1,0 +1,4 @@
+protobuf>=7.35.1,<8
+aiohttp>=3.9,<4
+aiosqlite>=0.20,<1
+SQLAlchemy[asyncio]>=2.0,<3

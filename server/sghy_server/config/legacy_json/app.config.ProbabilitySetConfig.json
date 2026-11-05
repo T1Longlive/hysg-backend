@@ -1,0 +1,290 @@
+{
+  "1": {
+    "Group": 1.0,
+    "MaxLv": 32.0,
+    "AdditionGroup": 1.0,
+    "MaxValue": 300.0,
+    "MinValue": 100.0,
+    "OpenLv": 22.0,
+    "ID": 1.0
+  },
+  "2": {
+    "Group": 1.0,
+    "MaxLv": 36.0,
+    "AdditionGroup": 4.0,
+    "MaxValue": 15.0,
+    "MinValue": 5.0,
+    "OpenLv": 27.0,
+    "ID": 2.0
+  },
+  "3": {
+    "Group": 1.0,
+    "MaxLv": 34.0,
+    "AdditionGroup": 7.0,
+    "MaxValue": 15.0,
+    "MinValue": 5.0,
+    "OpenLv": 29.0,
+    "ID": 3.0
+  },
+  "4": {
+    "Group": 1.0,
+    "MaxLv": 38.0,
+    "AdditionGroup": 8.0,
+    "MaxValue": 45.0,
+    "MinValue": 15.0,
+    "OpenLv": 31.0,
+    "ID": 4.0
+  },
+  "5": {
+    "Group": 2.0,
+    "MaxLv": 32.0,
+    "AdditionGroup": 2.0,
+    "MaxValue": 210.0,
+    "MinValue": 70.0,
+    "OpenLv": 22.0,
+    "ID": 5.0
+  },
+  "6": {
+    "Group": 2.0,
+    "MaxLv": 36.0,
+    "AdditionGroup": 5.0,
+    "MaxValue": 15.0,
+    "MinValue": 5.0,
+    "OpenLv": 27.0,
+    "ID": 6.0
+  },
+  "7": {
+    "Group": 2.0,
+    "MaxLv": 38.0,
+    "AdditionGroup": 6.0,
+    "MaxValue": 15.0,
+    "MinValue": 5.0,
+    "OpenLv": 29.0,
+    "ID": 7.0
+  },
+  "8": {
+    "Group": 2.0,
+    "MaxLv": 34.0,
+    "AdditionGroup": 9.0,
+    "MaxValue": 750.0,
+    "MinValue": 250.0,
+    "OpenLv": 31.0,
+    "ID": 8.0
+  },
+  "9": {
+    "Group": 1.0,
+    "MaxLv": 40.0,
+    "AdditionGroup": 1.0,
+    "MaxValue": 400.0,
+    "MinValue": 130.0,
+    "OpenLv": 33.0,
+    "ID": 9.0
+  },
+  "10": {
+    "Group": 1.0,
+    "MaxLv": 42.0,
+    "AdditionGroup": 7.0,
+    "MaxValue": 20.0,
+    "MinValue": 7.0,
+    "OpenLv": 35.0,
+    "ID": 10.0
+  },
+  "11": {
+    "Group": 2.0,
+    "MaxLv": 40.0,
+    "AdditionGroup": 2.0,
+    "MaxValue": 280.0,
+    "MinValue": 90.0,
+    "OpenLv": 33.0,
+    "ID": 11.0
+  },
+  "12": {
+    "Group": 2.0,
+    "MaxLv": 42.0,
+    "AdditionGroup": 9.0,
+    "MaxValue": 1000.0,
+    "MinValue": 325.0,
+    "OpenLv": 35.0,
+    "ID": 12.0
+  },
+  "13": {
+    "Group": 1.0,
+    "MaxLv": 44.0,
+    "AdditionGroup": 4.0,
+    "MaxValue": 20.0,
+    "MinValue": 7.0,
+    "OpenLv": 37.0,
+    "ID": 13.0
+  },
+  "14": {
+    "Group": 1.0,
+    "MaxLv": 46.0,
+    "AdditionGroup": 8.0,
+    "MaxValue": 60.0,
+    "MinValue": 20.0,
+    "OpenLv": 39.0,
+    "ID": 14.0
+  },
+  "15": {
+    "Group": 2.0,
+    "MaxLv": 44.0,
+    "AdditionGroup": 5.0,
+    "MaxValue": 20.0,
+    "MinValue": 7.0,
+    "OpenLv": 37.0,
+    "ID": 15.0
+  },
+  "16": {
+    "Group": 2.0,
+    "MaxLv": 46.0,
+    "AdditionGroup": 6.0,
+    "MaxValue": 20.0,
+    "MinValue": 7.0,
+    "OpenLv": 39.0,
+    "ID": 16.0
+  },
+  "17": {
+    "Group": 1.0,
+    "MaxLv": 48.0,
+    "AdditionGroup": 1.0,
+    "MaxValue": 500.0,
+    "MinValue": 160.0,
+    "OpenLv": 41.0,
+    "ID": 17.0
+  },
+  "18": {
+    "Group": 1.0,
+    "MaxLv": 50.0,
+    "AdditionGroup": 7.0,
+    "MaxValue": 25.0,
+    "MinValue": 8.0,
+    "OpenLv": 43.0,
+    "ID": 18.0
+  },
+  "19": {
+    "Group": 2.0,
+    "MaxLv": 48.0,
+    "AdditionGroup": 2.0,
+    "MaxValue": 350.0,
+    "MinValue": 115.0,
+    "OpenLv": 41.0,
+    "ID": 19.0
+  },
+  "20": {
+    "Group": 2.0,
+    "MaxLv": 50.0,
+    "AdditionGroup": 9.0,
+    "MaxValue": 1250.0,
+    "MinValue": 420.0,
+    "OpenLv": 43.0,
+    "ID": 20.0
+  },
+  "21": {
+    "Group": 1.0,
+    "MaxLv": 52.0,
+    "AdditionGroup": 4.0,
+    "MaxValue": 25.0,
+    "MinValue": 8.0,
+    "OpenLv": 45.0,
+    "ID": 21.0
+  },
+  "22": {
+    "Group": 1.0,
+    "MaxLv": 54.0,
+    "AdditionGroup": 8.0,
+    "MaxValue": 75.0,
+    "MinValue": 25.0,
+    "OpenLv": 47.0,
+    "ID": 22.0
+  },
+  "23": {
+    "Group": 2.0,
+    "MaxLv": 52.0,
+    "AdditionGroup": 5.0,
+    "MaxValue": 25.0,
+    "MinValue": 8.0,
+    "OpenLv": 45.0,
+    "ID": 23.0
+  },
+  "24": {
+    "Group": 2.0,
+    "MaxLv": 54.0,
+    "AdditionGroup": 6.0,
+    "MaxValue": 25.0,
+    "MinValue": 8.0,
+    "OpenLv": 47.0,
+    "ID": 24.0
+  },
+  "25": {
+    "Group": 1.0,
+    "MaxLv": 60.0,
+    "AdditionGroup": 1.0,
+    "MaxValue": 600.0,
+    "MinValue": 200.0,
+    "OpenLv": 49.0,
+    "ID": 25.0
+  },
+  "26": {
+    "Group": 1.0,
+    "MaxLv": 60.0,
+    "AdditionGroup": 7.0,
+    "MaxValue": 30.0,
+    "MinValue": 10.0,
+    "OpenLv": 51.0,
+    "ID": 26.0
+  },
+  "27": {
+    "Group": 2.0,
+    "MaxLv": 60.0,
+    "AdditionGroup": 2.0,
+    "MaxValue": 420.0,
+    "MinValue": 140.0,
+    "OpenLv": 49.0,
+    "ID": 27.0
+  },
+  "28": {
+    "Group": 2.0,
+    "MaxLv": 60.0,
+    "AdditionGroup": 9.0,
+    "MaxValue": 1500.0,
+    "MinValue": 500.0,
+    "OpenLv": 51.0,
+    "ID": 28.0
+  },
+  "29": {
+    "Group": 1.0,
+    "MaxLv": 60.0,
+    "AdditionGroup": 4.0,
+    "MaxValue": 30.0,
+    "MinValue": 10.0,
+    "OpenLv": 53.0,
+    "ID": 29.0
+  },
+  "30": {
+    "Group": 1.0,
+    "MaxLv": 60.0,
+    "AdditionGroup": 8.0,
+    "MaxValue": 90.0,
+    "MinValue": 30.0,
+    "OpenLv": 55.0,
+    "ID": 30.0
+  },
+  "31": {
+    "Group": 2.0,
+    "MaxLv": 60.0,
+    "AdditionGroup": 5.0,
+    "MaxValue": 30.0,
+    "MinValue": 10.0,
+    "OpenLv": 53.0,
+    "ID": 31.0
+  },
+  "32": {
+    "Group": 2.0,
+    "MaxLv": 60.0,
+    "AdditionGroup": 6.0,
+    "MaxValue": 30.0,
+    "MinValue": 10.0,
+    "OpenLv": 55.0,
+    "ID": 32.0
+  }
+}
